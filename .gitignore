@@ -107,3 +107,4 @@ conala-corpus/conala-mined.jsonl
 conala-corpus
 conala-corpus/conala-test.json
 conala-corpus/conala-train.json
+.idea
