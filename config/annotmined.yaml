@@ -33,7 +33,6 @@ annotmined: !Experiment
       - filenum: all
         tokenizers:
         - !SentencepieceTokenizer
-          path: ''
           train_files:
           - 'conala-corpus/conala-trainnodev+mined.intent'
           - 'conala-corpus/conala-trainnodev+mined.snippet'
@@ -49,9 +48,9 @@ annotmined: !Experiment
       - 'conala-corpus/conala-trainnodev+mined.tmspm16000.snippet.vocab'
       specs:
       - filenum: all
-        spec:
-        - type: freq
-          min_freq: 2
+        filters:
+        - !VocabFiltererFreq
+            min_freq: 2
   model: !DefaultTranslator
     src_reader: !PlainTextReader
       vocab: !Vocab {vocab_file: 'conala-corpus/conala-trainnodev+mined.tmspm16000.intent.vocab'}
@@ -64,9 +63,9 @@ annotmined: !Experiment
     attender: !MlpAttender {}
     trg_embedder: !SimpleWordEmbedder
       emb_dim: 128
-    decoder: !MlpSoftmaxDecoder
+    decoder: !AutoRegressiveDecoder
       bridge: !CopyBridge {}
-    inference: !SimpleInference
+    inference: !AutoRegressiveInference
       search_strategy: !BeamSearch
         len_norm: !PolynomialNormalization
           apply_during_search: True
