@@ -31,7 +31,7 @@ cd $WDIR
 for setting in annotmined annot; do
 
   # Train and test a seq2seq model
-  xnmt --dynet-gpu $SDIR/config/$setting.yaml
+  xnmt --dynet-mem 1024 $SDIR/config/$setting.yaml
   
   # Package the output in the appropriate way
   python $SDIR/preproc/seq2seq_output_to_code.py results/$setting.test.hyp conala-corpus/conala-test.json.seq2seq results/$setting.test.json

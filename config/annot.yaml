@@ -33,7 +33,6 @@ annot: !Experiment
       - filenum: all
         tokenizers:
         - !SentencepieceTokenizer
-          path: ''
           hard_vocab_limit: False
           train_files:
           - 'conala-corpus/conala-trainnodev.intent'
@@ -82,7 +81,7 @@ annot: !Experiment
     patience: 3
     lr_decay: 0.5
     restart_trainer: True
-    run_for_epochs: 30
+    run_for_epochs: 10
     src_file: 'conala-corpus/conala-trainnodev.tspm4000.intent'
     trg_file: 'conala-corpus/conala-trainnodev.tspm4000.snippet'
     dev_tasks:
