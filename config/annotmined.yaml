@@ -97,4 +97,3 @@ annotmined: !Experiment
       src_file: 'conala-corpus/conala-test.tmspm16000.intent'
       ref_file: 'conala-corpus/conala-test.snippet'
       hyp_file: 'results/{EXP}.test.hyp'
-
