@@ -73,7 +73,7 @@ annotmined: !Experiment
       post_process: join-piece
   train: !SimpleTrainingRegimen
     trainer: !AdamTrainer
-      alpha: 0.5
+      alpha: 0.001
     batcher: !WordSrcBatcher
       avg_batch_size: 64
     patience: 3
