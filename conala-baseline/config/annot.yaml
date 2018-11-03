@@ -33,6 +33,7 @@ annot: !Experiment
       - filenum: all
         tokenizers:
         - !SentencepieceTokenizer
+          hard_vocab_limit: False
           train_files:
           - 'conala-corpus/conala-trainnodev.intent'
           - 'conala-corpus/conala-trainnodev.snippet'
@@ -48,9 +49,9 @@ annot: !Experiment
       - 'conala-corpus/conala-trainnodev.tspm4000.snippet.vocab'
       specs:
       - filenum: all
-        spec:
-        - type: freq
-          min_freq: 2
+        filters:
+        - !VocabFiltererFreq
+            min_freq: 2
   model: !DefaultTranslator
     src_reader: !PlainTextReader
       vocab: !Vocab {vocab_file: 'conala-corpus/conala-trainnodev.tspm4000.intent.vocab'}
@@ -80,7 +81,7 @@ annot: !Experiment
     patience: 3
     lr_decay: 0.5
     restart_trainer: True
-    run_for_epochs: 1
+    run_for_epochs: 30
     src_file: 'conala-corpus/conala-trainnodev.tspm4000.intent'
     trg_file: 'conala-corpus/conala-trainnodev.tspm4000.snippet'
     dev_tasks:
