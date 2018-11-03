@@ -79,7 +79,7 @@ annotmined: !Experiment
     patience: 3
     lr_decay: 0.5
     restart_trainer: True
-    run_for_epochs: 5
+    run_for_epochs: 30
     src_file: 'conala-corpus/conala-trainnodev+mined.tmspm16000.intent'
     trg_file: 'conala-corpus/conala-trainnodev+mined.tmspm16000.snippet'
     dev_tasks:
