@@ -77,23 +77,24 @@ layer_dim = 128
 model = DefaultTranslator(
   src_reader=PlainTextReader(vocab=src_vocab),
   trg_reader=PlainTextReader(vocab=trg_vocab),
-  src_embedder=SimpleWordEmbedder(emb_dim=128),
+  src_embedder=SimpleWordEmbedder(emb_dim=layer_dim,vocab_size=len(src_vocab)),
 
   encoder=BiLSTMSeqTransducer(input_dim=layer_dim, hidden_dim=layer_dim, layers=1),
   attender=MlpAttender(hidden_dim=layer_dim, state_dim=layer_dim, input_dim=layer_dim),
   trg_embedder=SimpleWordEmbedder(emb_dim=layer_dim, vocab_size=len(trg_vocab)),
 
-#  decoder=AutoRegressiveDecoder(input_dim=layer_dim,
-#                                rnn=BiLSTMSeqTransducer(input_dim=layer_dim, hidden_dim=layer_dim,
- #                                                        decoder_input_dim=layer_dim, yaml_path="decoder"),
-  #                              transform=AuxNonLinear(input_dim=layer_dim, output_dim=layer_dim,
-   #                                                    aux_input_dim=layer_dim),
-    #                            scorer=Softmax(vocab_size=len(trg_vocab), input_dim=layer_dim),
-     #                           trg_embed_dim=layer_dim,
-      #                          bridge=CopyBridge()),
-  #inference=inference)
+    decoder=AutoRegressiveDecoder(input_dim=layer_dim,
+                                                                 rnn=UniLSTMSeqTransducer(input_dim=layer_dim, hidden_dim=layer_dim,
+                                                                                          ),
+                                                                transform=AuxNonLinear(input_dim=layer_dim, output_dim=layer_dim,
+                                                                                      aux_input_dim=layer_dim),
+                                                              scorer=Softmax(vocab_size=len(trg_vocab), input_dim=layer_dim),
+                                                            trg_embed_dim=layer_dim,
+                                                            input_feeding= False,
+                                                            bridge=CopyBridge(dec_dim=layer_dim)),
+  inference=inference)
 
-decoder = AutoRegressiveDecoder(bridge=CopyBridge(),inference=inference))
+#decoder = AutoRegressiveDecoder(bridge=CopyBridge(),inference=inference))
 
 train = SimpleTrainingRegimen(
   name=f"{EXP}",
@@ -113,7 +114,8 @@ train = SimpleTrainingRegimen(
              AccuracyEvalTask(eval_metrics= 'bleu',
                               src_file= f'{EXP_DIR}/conala-corpus/conala-dev.tmspm16000.intent',
                               ref_file= f'{EXP_DIR}/conala-corpus/conala-dev.snippet',
-                              hyp_file= f'results/{EXP}.dev.hyp')])
+                              hyp_file= f'results/{EXP}.dev.hyp',
+                              model = model)])
 
 evaluate = [AccuracyEvalTask(eval_metrics="bleu",
                              src_file=f"{EXP_DIR}/conala-corpus/conala-test.tmspm16000.intent",
@@ -123,13 +125,14 @@ evaluate = [AccuracyEvalTask(eval_metrics="bleu",
                              model=model)]
 
 standard_experiment = Experiment(
-  exp_global= ExpGlobal(default_layer_dim= 512, dropout= 0.3,
+  exp_global= ExpGlobal(default_layer_dim= layer_dim, dropout= 0.3,
                         log_file= log_file,model_file=model_file),
   name="annotmined",
   model=model,
   train=train,
   evaluate=evaluate
 )
+
 
 # run experiment
 standard_experiment(save_fct=lambda: save_to_file(model_file, standard_experiment))
