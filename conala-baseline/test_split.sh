@@ -26,4 +26,5 @@ for f in intent snippet; do
 done
 
 
+cd $WDIR
 

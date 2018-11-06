@@ -46,20 +46,20 @@ class AnnotRunner():
 
         model_file = f"{EXP_DIR}/results/{EXP}.mod"
         log_file = f"{EXP_DIR}/results/{EXP}.log"
-
+        xnmt.tee.utils.dy.DynetParams().set_mem(1024) #Doesnt work figure out how to set memory
         xnmt.tee.set_out_file(log_file,exp_name=EXP)
 
         ParamManager.init_param_col()
         ParamManager.param_col.model_file = model_file
 
-        pre_runner=PreprocRunner(tasks= [PreprocTokenize(in_files=[f'{EXP_DIR}/conala-corpus/conala-trainnodev.intent',
-                                                                   f'{EXP_DIR}/conala-corpus/conala-trainnodev.snippet',
+        pre_runner=PreprocRunner(tasks= [PreprocTokenize(in_files=[f'{EXP_DIR}/conala-corpus/conala-trainnodev.snippet',
+                                                                   f'{EXP_DIR}/conala-corpus/conala-trainnodev.intent',
                                                                    f'{EXP_DIR}/conala-corpus/conala-dev.intent',
                                                                    f'{EXP_DIR}/conala-corpus/conala-dev.snippet',
                                                                    f'{EXP_DIR}/conala-corpus/conala-test.intent',
                                                                    f'{EXP_DIR}/conala-corpus/conala-test.snippet'],
-                                                         out_files= [f'{EXP_DIR}/conala-corpus/conala-trainnodev.tmspm4000.intent',
-                                                                     f'{EXP_DIR}/conala-corpus/conala-trainnodev.tmspm4000.snippet',
+                                                         out_files= [f'{EXP_DIR}/conala-corpus/conala-trainnodev.tmspm4000.snippet',
+                                                                     f'{EXP_DIR}/conala-corpus/conala-trainnodev.tmspm4000.intent',
                                                                      f'{EXP_DIR}/conala-corpus/conala-dev.tmspm4000.intent',
                                                                      f'{EXP_DIR}/conala-corpus/conala-dev.tmspm4000.snippet',
                                                                      f'{EXP_DIR}/conala-corpus/conala-test.tmspm4000.intent',

@@ -50,18 +50,18 @@ class MinedRunner():
         log_file = f"{EXP_DIR}/results/{EXP}.log"
 
         xnmt.tee.set_out_file(log_file,exp_name=EXP)
-
+        xnmt.tee.utils.dy.DynetParams().set_mem(1024) #Doesnt work figure out how to set memory
         ParamManager.init_param_col()
         ParamManager.param_col.model_file = model_file
 
-        pre_runner=PreprocRunner(tasks= [PreprocTokenize(in_files=[f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.intent',
-                                                                   f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.snippet',
+        pre_runner=PreprocRunner(tasks= [PreprocTokenize(in_files=[f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.snippet',
+                                                                   f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.intent',
                                                                    f'{EXP_DIR}/conala-corpus/conala-dev.intent',
                                                                    f'{EXP_DIR}/conala-corpus/conala-dev.snippet',
                                                                    f'{EXP_DIR}/conala-corpus/conala-test.intent',
                                                                    f'{EXP_DIR}/conala-corpus/conala-test.snippet'],
-                                                         out_files= [f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.tmspm16000.intent',
-                                                                     f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.tmspm16000.snippet',
+                                                         out_files= [f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.tmspm16000.snippet',
+                                                                     f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.tmspm16000.intent',
                                                                      f'{EXP_DIR}/conala-corpus/conala-dev.tmspm16000.intent',
                                                                      f'{EXP_DIR}/conala-corpus/conala-dev.tmspm16000.snippet',
                                                                      f'{EXP_DIR}/conala-corpus/conala-test.tmspm16000.intent',
@@ -69,7 +69,7 @@ class MinedRunner():
                                                          specs= [{'filenum':'all',
                                                                  'tokenizers':[SentencepieceTokenizer(
                                                                      train_files= [f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.intent',
-                                                                                   f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.snippet'],vocab_size=self.vocab_size,
+                                                                         f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.snippet'],vocab_size=self.vocab_size,
                                                                  model_type= self.model_type,model_prefix= 'conala-corpus/conala-trainnodev+mined.tmspm16000.spm')]}])
             ,PreprocVocab(in_files= [f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.tmspm16000.intent',
                                      f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.tmspm16000.snippet'],
