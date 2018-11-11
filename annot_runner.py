@@ -8,7 +8,7 @@ from xnmt.modelparts.attenders import MlpAttender
 from xnmt.batchers import WordSrcBatcher,InOrderBatcher,Batcher
 from xnmt.modelparts.bridges import CopyBridge
 from xnmt.modelparts.decoders import AutoRegressiveDecoder
-from xnmt.modelparts.embedders import SimpleWordEmbedder
+from xnmt.modelparts.embedders import SimpleWordEmbedder, DenseWordEmbedder, PretrainedSimpleWordEmbedder
 from xnmt.eval.tasks import LossEvalTask, AccuracyEvalTask
 from xnmt.experiments import Experiment,ExpGlobal
 from xnmt.inferences import AutoRegressiveInference
@@ -87,11 +87,11 @@ class AnnotRunner():
         model = DefaultTranslator(
           src_reader=PlainTextReader(vocab=src_vocab),
           trg_reader=PlainTextReader(vocab=trg_vocab),
-          src_embedder=SimpleWordEmbedder(emb_dim=layer_dim,vocab_size=len(src_vocab)),
+          src_embedder=PretrainedSimpleWordEmbedder(filename='conala-mined-input.vec',emb_dim=layer_dim,vocab_size=len(src_vocab)),
 
           encoder=BiLSTMSeqTransducer(input_dim=layer_dim, hidden_dim=layer_dim, layers=self.layers),
           attender=MlpAttender(hidden_dim=layer_dim, state_dim=layer_dim, input_dim=layer_dim),
-          trg_embedder=SimpleWordEmbedder(emb_dim=layer_dim, vocab_size=len(trg_vocab)),
+          trg_embedder=PretrainedSimpleWordEmbedder(filename = 'conala-mined-input.vec',emb_dim=layer_dim, vocab_size=len(trg_vocab)),
 
             decoder=AutoRegressiveDecoder(input_dim=layer_dim,
                                                                          rnn=UniLSTMSeqTransducer(input_dim=layer_dim, hidden_dim=layer_dim,

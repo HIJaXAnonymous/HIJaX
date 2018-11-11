@@ -10,7 +10,7 @@ class EmailTool:
 
 
     def send(self):
-        sender= yagmail.SMTP('rumibot02@gmail.com')
+        sender= yagmail.SMTP('rumibot02@gmail.com','cheezekun')
         if self.file!=None:
             contents= [self.message,self.file]
 

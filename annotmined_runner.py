@@ -82,8 +82,7 @@ class MinedRunner():
 
         batcher = Batcher(batch_size=64)
 
-        inference = AutoRegressiveInference(search_strategy= BeamSearch(len_norm= PolynomialNormalization(apply_during_search=True),beam_size= 5),post_process= 'join-piece')
-
+        inference = AutoRegressiveInference(search_strategy= BeamSearch(len_norm= PolynomialNormalization(apply_during_search=True),beam_size= 5),post_process= 'join-bpe')
         layer_dim = self.layer_dim
 
         model = DefaultTranslator(
