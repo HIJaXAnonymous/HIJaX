@@ -6,11 +6,10 @@ import zipfile
 from taisazero.email_tool import EmailTool
 
 EXP_DIR = os.path.dirname(__file__)
-ant_mined = MinedRunner(model_type='unigram',epochs= 30,layers = 3,layer_dim =128)
+ant_mined = MinedRunner(model_type='unigram',epochs= 5,layers = 3,layer_dim =128)
 EXP_DIR = '.'
 ant = AnnotRunner(model_type='unigram',epochs= 60, layer_dim= 100, alpha= 0.01)
 
-#A
 ant_mined.run()
 
 os.system('python '+str(EXP_DIR)+'/conala-baseline/'+'preproc/seq2seq_output_to_code.py results/annotmined.test.hyp conala-corpus/conala-test.json.seq2seq results/annotmined.test.json')
