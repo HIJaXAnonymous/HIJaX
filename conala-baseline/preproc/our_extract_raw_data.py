@@ -15,13 +15,20 @@ from util import get_encoded_code_tokens, detokenize_code, encode_tokenized_code
 if __name__ == '__main__':
 
     canon = Canonical()
+    
+    #Add additional cannon objects here
+    canonOptions = [
+        Canonical(remove=['\ba\b', '\ban\b'], remove_punctuation=True),
+        Canonical(lower=True),
+    ]
 
     canonSelect = int(sys.argv[1])
-
-    if canonSelect == 1:
+    if canonSelect < len(canonOptions):
         print("Setting canon")
-        canon = Canonical(remove=['\ba\b', '\ban\b'], remove_punctuation=True)
-
+        canon = canonOptions[canonSelect]
+    else:
+        print("Failed to set cannon...., using default")
+    
     for file_path, file_type in [('conala-train.json', 'annotated'), ('conala-test.json', 'annotated'), ('conala-mined.jsonl', 'mined')]:
         print('extracting {} file {}'.format(file_type, file_path), file=sys.stderr)
 
@@ -58,7 +65,7 @@ if __name__ == '__main__':
                     decanonical_snippet_reconstr = astor.to_source(ast.parse(decanonical_snippet)).strip()
                     encoded_reconstr_code = get_encoded_code_tokens(decanonical_snippet_reconstr)
                     decoded_reconstr_code = encoded_code_tokens_to_code(encoded_reconstr_code)
-
+                    print('.', end='')
                     if not compare_ast(ast.parse(decoded_reconstr_code), ast.parse(snippet)):
                         print(i)
                         print('Original Snippet: %s' % snippet_reconstr)

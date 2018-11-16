@@ -5,9 +5,8 @@ import shutil
 import zipfile
 from taisazero.email_tool import EmailTool
 
-EXP_DIR = os.path.dirname(__file__)
 ant_mined = MinedRunner(model_type='unigram',epochs= 30,layers = 3,layer_dim =128)
-EXP_DIR = '.'
+#EXP_DIR = '.'
 ant = AnnotRunner(model_type='unigram',epochs= 15, layer_dim= 100, alpha= 0.01)
 
 #ant_mined.run()

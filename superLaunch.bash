@@ -17,3 +17,4 @@ python annot_launcher.py
 date '+%A %W %Y %X'
 echo "Date: $(date '+%A %W %Y %X')"
 echo "Done!"
+

@@ -14,7 +14,7 @@ WDIR=`pwd`
 # Extract data 
 cd $WDIR/conala-corpus
 
-python $SDIR/preproc/our_extract_raw_data.py 1 # > raw_data.txt
+python $SDIR/preproc/our_extract_raw_data.py 0 # > raw_data.txt
 
 python $SDIR/preproc/json_to_seq2seq.py conala-train.json.seq2seq conala-train.intent conala-train.snippet
 python $SDIR/preproc/json_to_seq2seq.py conala-test.json.seq2seq conala-test.intent conala-test.snippet

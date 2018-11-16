@@ -7,6 +7,8 @@ import astor
 import string
 #from nltk.stem import PorterStemmer
 
+#You may need to import your stemmer here too
+
 
 QUOTED_STRING_RE = re.compile(r"(?P<quote>[`'\"])(?P<string>.*?)(?P=quote)")
 rgx_list = ['how to', 'how (do|can) (i|you)', '\(?in? python[ :)]*', 'how to', '[a-z ]*(possible|way) to']
@@ -42,9 +44,15 @@ def replace_strings_in_ast(py_ast, string2slot):
                         setattr(node, k, val)
 
 class Canonical:
-    def __init__(self, remove = [], replace = {}, stemmer = None, remove_punctuation = False, lower = True):
+    #remove -regex matches you want to remove
+    #replace regex matches you want to replace with another word (regex:word)
+    #stemmer the stmmer object you want to use, calls .stem() on tokens
+    #remove_punctuation removes punctuation when set to True
+    #lower converts intent to lower case when set to True
+    #std_var Standardize Variables, replaces variables with standardized names when set to True
+    def __init__(self, remove = [], replace = {}, stemmer = None, remove_punctuation = False, lower = False, std_var = False):
         self.slot_map = dict()
-
+        
         #Compile all the removes!
         self.remove = re.compile('|'.join(re.compile(x).pattern for x in remove)) 
 
@@ -52,6 +60,7 @@ class Canonical:
         self.replace = {}
         for match, repl in replace.items(): self.replace[re.compile(match)] = repl
 
+        self.std_var = std_var
         self.stemmer = stemmer
         self.remove_punctuation = remove_punctuation
         self.lower = lower
@@ -61,6 +70,9 @@ class Canonical:
         str_matches = QUOTED_STRING_RE.findall(intent)
 
         self.slot_map = dict()
+        if (not self.std_var):
+            return intent
+
         count = 0;
         for i in range(len(str_matches)):
             if not str_matches[i][1] in self.slot_map:
