@@ -22,6 +22,6 @@ python $SDIR/preproc/json_to_seq2seq.py conala-mined.jsonl.seq2seq conala-mined.
 
 cd ..
 
-rm conala-corpus-v1.1.zip
+#rm conala-corpus-v1.1.zip
 
 echo "Done!"
