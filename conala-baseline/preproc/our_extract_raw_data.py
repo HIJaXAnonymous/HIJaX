@@ -18,8 +18,22 @@ if __name__ == '__main__':
     
     #Add additional cannon objects here
     canonOptions = [
-        Canonical(remove=['\ba\b', '\ban\b'], remove_punctuation=True),
-        Canonical(lower=True),
+        Canonical(remove=["is there (a|any)?", 'how (do|can|should|would) (i|you)', '(programmatic|pythonic)(ally)?', '(with )?(in )?python', '[a-z ]*(possible|way|how) to ', '(is there an? )?(in a )?(simple)|(easy) way( to)?|simply|easily', 'cant?( (i)|(you)|(we))?'],
+                  replace={' an?[ .]':' ', 'dictionary':'dict', " the ": " "},
+                  lower=True,
+                  stemmer=nltk.stem.PorterStemmer(),
+                  remove_punctuation=True,
+                  std_var=True
+                  ),
+        Canonical(remove=["is there (a|any)?", 'how (do|can|should|would) (i|you)',
+                          '(programmatic|pythonic)(ally)?', '(with )?(in )?python', '[a-z ]*(possible|way|how) to ',
+                          '(is there an? )?(in a )?(simple)|(easy) way( to)?|simply|easily', 'cant?( (i)|(you)|(we))?'],
+                  replace={' an?[ .]': ' ', 'dictionary': 'dict', " the ": " "},
+                  lower=True,
+                  stemmer=None,
+                  remove_punctuation=True,
+                  std_var=True
+                  ),
     ]
 
     canonSelect = int(sys.argv[1])
@@ -55,12 +69,12 @@ if __name__ == '__main__':
             intent_tokens = []
             if rewritten_intent:
                 try:
-                    rewritten_intent = canon.clean_intent(rewritten_intent)
                     canonical_intent = canon.canonicalize_intent(rewritten_intent)
-                    canonical_snippet = canon.canonicalize_code(snippet)
-                    intent_tokens = nltk.word_tokenize(canonical_intent)
-                    decanonical_snippet = canon.decanonicalize_code(canonical_snippet)
+                    final_intent = canon.clean_intent(canonical_intent)
+                    intent_tokens = nltk.word_tokenize(final_intent)
 
+                    canonical_snippet = canon.canonicalize_code(snippet)
+                    decanonical_snippet = canon.decanonicalize_code(canonical_snippet)
                     snippet_reconstr = astor.to_source(ast.parse(snippet)).strip()
                     decanonical_snippet_reconstr = astor.to_source(ast.parse(decanonical_snippet)).strip()
                     encoded_reconstr_code = get_encoded_code_tokens(decanonical_snippet_reconstr)
@@ -90,7 +104,7 @@ if __name__ == '__main__':
                 encoded_reconstr_code = get_encoded_code_tokens(canonical_snippet.strip())
 
             if not intent_tokens:
-                intent_tokens = nltk.word_tokenize(intent)
+                intent_tokens = nltk.word_tokenize(final_intent)
 
             example['intent_tokens'] = intent_tokens
             example['snippet_tokens'] = encoded_reconstr_code
