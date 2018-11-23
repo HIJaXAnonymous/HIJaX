@@ -7,8 +7,9 @@ SDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 WDIR=`pwd`
 
 # Get the data
-#wget http://www.phontron.com/download/conala-corpus-v1.1.zip
-#unzip conala-corpus-v1.1.zip
+
+wget http://www.phontron.com/download/conala-corpus-v1.1.zip
+unzip conala-corpus-v1.1.zip
 
 
 # Extract data 
@@ -22,6 +23,6 @@ python $SDIR/preproc/json_to_seq2seq.py conala-mined.jsonl.seq2seq conala-mined.
 
 cd ..
 
-#rm conala-corpus-v1.1.zip
+rm conala-corpus-v1.1.zip
 
 echo "Done!"

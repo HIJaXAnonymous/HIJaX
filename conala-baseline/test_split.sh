@@ -8,14 +8,18 @@ WDIR=`pwd`
 wget http://www.phontron.com/download/conala-corpus-v1.1.zip
 unzip conala-corpus-v1.1.zip
 
-# Extract data 
+# Extract data
+cd $WDIR/subset_data
+cp conala-unique_mined.json $WDIR/conala-corpus/conala-unique_mined.json 
 cd $WDIR/conala-corpus
 
-python $SDIR/preproc/extract_raw_data.py # > raw_data.txt
+python $SDIR/preproc/our_extract_raw_data.py 0 # > raw_data.txt
 
 python $SDIR/preproc/json_to_seq2seq.py conala-train.json.seq2seq conala-train.intent conala-train.snippet
 python $SDIR/preproc/json_to_seq2seq.py conala-test.json.seq2seq conala-test.intent conala-test.snippet
 python $SDIR/preproc/json_to_seq2seq.py conala-mined.jsonl.seq2seq conala-mined.intent conala-mined.snippet
+
+python $SDIR/preproc/json_to_seq2seq.py conala-unique_mined.json.seq2seq conala-unique_mined.intent conala-unique_mined.snippet
 
 # Split off a 400-line dev set from the training set
 # Also, concatenate the first 100000 lines of mined data
@@ -27,4 +31,8 @@ done
 
 
 cd $WDIR
+
+rm conala-corpus-v1.1.zip
+
+echo "Done!"
 

@@ -28,7 +28,7 @@ from xnmt.search_strategies import BeamSearch
 from xnmt.length_norm import PolynomialNormalization
 
 class MinedRunner():
-    def __init__(self, vocab_size=16000, model_type='unigram', min_freq=2, layers=1, layer_dim=128, alpha=0.001, epochs=5):
+    def __init__(self, vocab_size=16000, model_type='unigram', min_freq=2, layers=1, layer_dim=128, alpha=0.001, epochs=5,embedding='SimpleWordEmbedding'):
         self.vocab_size = vocab_size
         self.model_type = model_type
         self.min_freq = min_freq
@@ -36,6 +36,7 @@ class MinedRunner():
         self.layer_dim = layer_dim
         self.alpha = alpha
         self.epochs = epochs
+	self.embedding = embedding
 
 
     def run(self):
@@ -82,10 +83,11 @@ class MinedRunner():
 
         batcher = Batcher(batch_size=64)
 
-        inference = AutoRegressiveInference(search_strategy= BeamSearch(len_norm= PolynomialNormalization(apply_during_search=True),beam_size= 5),post_process= 'join-bpe')
+        inference = AutoRegressiveInference(search_strategy= BeamSearch(len_norm= PolynomialNormalization(apply_during_search=True),beam_size= 5),post_process= 'join-piece')
         layer_dim = self.layer_dim
+	
 
-        model = DefaultTranslator(
+       	model = DefaultTranslator(
           src_reader=PlainTextReader(vocab=src_vocab),
           trg_reader=PlainTextReader(vocab=trg_vocab),
           src_embedder=SimpleWordEmbedder(emb_dim=layer_dim,vocab_size=len(src_vocab)),

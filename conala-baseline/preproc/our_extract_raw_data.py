@@ -43,7 +43,7 @@ if __name__ == '__main__':
     else:
         print("Failed to set cannon...., using default")
     
-    for file_path, file_type in [('conala-train.json', 'annotated'), ('conala-test.json', 'annotated'), ('conala-mined.jsonl', 'mined')]:
+    for file_path, file_type in [('conala-train.json', 'annotated'), ('conala-test.json', 'annotated'), ('conala-mined.jsonl', 'mined'),('conala-unique_mined.json','edited')]:
         print('extracting {} file {}'.format(file_type, file_path), file=sys.stderr)
 
         if file_type == 'annotated':
@@ -53,12 +53,16 @@ if __name__ == '__main__':
             with open(file_path, 'r') as f:
                 for line in f:
                     dataset.append(json.loads(line.strip()))
-
+        elif file_type == 'edited':
+            dataset = json.load(open(file_path))
+	
         for i, example in enumerate(dataset):
             intent = example['intent']
             if file_type == 'annotated':
               rewritten_intent = example['rewritten_intent']
             elif file_type == 'mined':
+              rewritten_intent = example['intent']
+            elif file_type == 'edited':
               rewritten_intent = example['intent']
             snippet = example['snippet']
             # print(i)
