@@ -8,7 +8,7 @@ from xnmt.modelparts.attenders import MlpAttender
 from xnmt.batchers import WordSrcBatcher,InOrderBatcher,Batcher
 from xnmt.modelparts.bridges import CopyBridge
 from xnmt.modelparts.decoders import AutoRegressiveDecoder
-from xnmt.modelparts.embedders import SimpleWordEmbedder
+from xnmt.modelparts.embedders import SimpleWordEmbedder,PretrainedSimpleWordEmbedder
 from xnmt.eval.tasks import LossEvalTask, AccuracyEvalTask
 from xnmt.experiments import Experiment,ExpGlobal
 from xnmt.inferences import AutoRegressiveInference
@@ -29,7 +29,7 @@ from xnmt.length_norm import PolynomialNormalization
 
 class MinedRunner():
     def __init__(self, vocab_size=16000, model_type='unigram', min_freq=2, layers=1, layer_dim=128, alpha=0.001, epochs=5,embedding='SimpleWordEmbedding'
-		, mined_data = 'conala-trainnodev+mined' ):
+		, mined_data = 'conala-trainnodev+mined', trg_embedding = None ):
         self.vocab_size = vocab_size
         self.model_type = model_type
         self.min_freq = min_freq
@@ -39,6 +39,7 @@ class MinedRunner():
         self.epochs = epochs
 	self.embedding = embedding
 	self.mined_data = mined_data
+	self.trg_embedding = trg_embedding
 
     def run(self):
         seed=13
@@ -66,7 +67,7 @@ class MinedRunner():
 								   f'{EXP_DIR}/conala-corpus/conala-unique_mined.intent',
 								   f'{EXP_DIR}/conala-corpus/conala-unique_mined.snippet'],
                                                          out_files= [f'{EXP_DIR}/conala-corpus/'+self.mined_data+'.tmspm16000.snippet',
-                                                                     f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.tmspm16000.intent',
+                                                                     f'{EXP_DIR}/conala-corpus/'+self.mined_data+'.tmspm16000.intent',
                                                                      f'{EXP_DIR}/conala-corpus/conala-dev.tmspm16000.intent',
                                                                      f'{EXP_DIR}/conala-corpus/conala-dev.tmspm16000.snippet',
                                                                      f'{EXP_DIR}/conala-corpus/conala-test.tmspm16000.intent',
@@ -91,28 +92,48 @@ class MinedRunner():
         inference = AutoRegressiveInference(search_strategy= BeamSearch(len_norm= PolynomialNormalization(apply_during_search=True),beam_size= 5),post_process= 'join-piece')
         layer_dim = self.layer_dim
 	
+	if self.embedding == 'SimpleWordEmbedding':
+		model = DefaultTranslator(
+		  src_reader=PlainTextReader(vocab=src_vocab),
+		  trg_reader=PlainTextReader(vocab=trg_vocab),
+		  src_embedder=SimpleWordEmbedder(emb_dim=layer_dim,vocab_size=len(src_vocab)),
 
-       	model = DefaultTranslator(
-          src_reader=PlainTextReader(vocab=src_vocab),
-          trg_reader=PlainTextReader(vocab=trg_vocab),
-          src_embedder=SimpleWordEmbedder(emb_dim=layer_dim,vocab_size=len(src_vocab)),
+		  encoder=BiLSTMSeqTransducer(input_dim=layer_dim, hidden_dim=layer_dim, layers=self.layers),
+		  attender=MlpAttender(hidden_dim=layer_dim, state_dim=layer_dim, input_dim=layer_dim),
+		  trg_embedder=SimpleWordEmbedder(emb_dim=layer_dim, vocab_size=len(trg_vocab)),
 
-          encoder=BiLSTMSeqTransducer(input_dim=layer_dim, hidden_dim=layer_dim, layers=self.layers),
-          attender=MlpAttender(hidden_dim=layer_dim, state_dim=layer_dim, input_dim=layer_dim),
-          trg_embedder=SimpleWordEmbedder(emb_dim=layer_dim, vocab_size=len(trg_vocab)),
+		    decoder=AutoRegressiveDecoder(input_dim=layer_dim,
+										 rnn=UniLSTMSeqTransducer(input_dim=layer_dim, hidden_dim=layer_dim,
+													  ),
+										transform=AuxNonLinear(input_dim=layer_dim, output_dim=layer_dim,
+												      aux_input_dim=layer_dim),
+									      scorer=Softmax(vocab_size=len(trg_vocab), input_dim=layer_dim),
+									    trg_embed_dim=layer_dim,
+									    input_feeding= False,
+									    bridge=CopyBridge(dec_dim=layer_dim)),
+		  inference=inference)
+	else:
+		model = DefaultTranslator(
+		  src_reader=PlainTextReader(vocab=src_vocab),
+		  trg_reader=PlainTextReader(vocab=trg_vocab),
+		  src_embedder=PretrainedSimpleWordEmbedder(filename= self.embedding,emb_dim=layer_dim,vocab = src_vocab),
 
-            decoder=AutoRegressiveDecoder(input_dim=layer_dim,
-                                                                         rnn=UniLSTMSeqTransducer(input_dim=layer_dim, hidden_dim=layer_dim,
-                                                                                                  ),
-                                                                        transform=AuxNonLinear(input_dim=layer_dim, output_dim=layer_dim,
-                                                                                              aux_input_dim=layer_dim),
-                                                                      scorer=Softmax(vocab_size=len(trg_vocab), input_dim=layer_dim),
-                                                                    trg_embed_dim=layer_dim,
-                                                                    input_feeding= False,
-                                                                    bridge=CopyBridge(dec_dim=layer_dim)),
-          inference=inference)
+		  encoder=BiLSTMSeqTransducer(input_dim=layer_dim, hidden_dim=layer_dim, layers=self.layers),
+		  attender=MlpAttender(hidden_dim=layer_dim, state_dim=layer_dim, input_dim=layer_dim),
+		  trg_embedder= PretrainedSimpleWordEmbedder(filename= self.trg_embedding,emb_dim=layer_dim,vocab = src_vocab),
 
-        #decoder = AutoRegressiveDecoder(bridge=CopyBridge(),inference=inference))
+		    decoder=AutoRegressiveDecoder(input_dim=layer_dim,
+										 rnn=UniLSTMSeqTransducer(input_dim=layer_dim, hidden_dim=layer_dim,
+													  ),
+										transform=AuxNonLinear(input_dim=layer_dim, output_dim=layer_dim,
+												      aux_input_dim=layer_dim),
+									      scorer=Softmax(vocab_size=len(trg_vocab), input_dim=layer_dim),
+									    trg_embed_dim=layer_dim,
+									    input_feeding= False,
+									    bridge=CopyBridge(dec_dim=layer_dim)),
+		  inference=inference)
+
+		#decoder = AutoRegressiveDecoder(bridge=CopyBridge(),inference=inference))
 
         train = SimpleTrainingRegimen(
           name=f"{EXP}",
