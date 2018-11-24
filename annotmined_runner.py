@@ -37,9 +37,9 @@ class MinedRunner():
         self.layer_dim = layer_dim
         self.alpha = alpha
         self.epochs = epochs
-	self.embedding = embedding
-	self.mined_data = mined_data
-	self.trg_embedding = trg_embedding
+        self.embedding = embedding
+        self.mined_data = mined_data
+        self.trg_embedding = trg_embedding
 
     def run(self):
         seed=13
@@ -63,9 +63,7 @@ class MinedRunner():
                                                                    f'{EXP_DIR}/conala-corpus/conala-dev.intent',
                                                                    f'{EXP_DIR}/conala-corpus/conala-dev.snippet',
                                                                    f'{EXP_DIR}/conala-corpus/conala-test.intent',
-                                                                   f'{EXP_DIR}/conala-corpus/conala-test.snippet',
-								   f'{EXP_DIR}/conala-corpus/conala-unique_mined.intent',
-								   f'{EXP_DIR}/conala-corpus/conala-unique_mined.snippet'],
+                                                                   f'{EXP_DIR}/conala-corpus/conala-test.snippet'],
                                                          out_files= [f'{EXP_DIR}/conala-corpus/'+self.mined_data+'.tmspm16000.snippet',
                                                                      f'{EXP_DIR}/conala-corpus/'+self.mined_data+'.tmspm16000.intent',
                                                                      f'{EXP_DIR}/conala-corpus/conala-dev.tmspm16000.intent',
@@ -84,16 +82,16 @@ class MinedRunner():
                                      f'{EXP_DIR}/conala-corpus/'+self.mined_data+'.tmspm16000.snippet.vocab'],
                           specs=[{'filenum':'all','filters':[VocabFiltererFreq(min_freq = self.min_freq)]}])],overwrite=False)
 
-        src_vocab = Vocab(vocab_file=f"{EXP_DIR}/conala-corpus/'+self.mined_data+'.tmspm16000.intent.vocab")
-        trg_vocab = Vocab(vocab_file=f"{EXP_DIR}/conala-corpus/'+self.mined_data+'.tmspm16000.snippet.vocab")
+        src_vocab = Vocab(vocab_file=f'{EXP_DIR}/conala-corpus/'+self.mined_data+'.tmspm16000.intent.vocab')
+        trg_vocab = Vocab(vocab_file=f'{EXP_DIR}/conala-corpus/'+self.mined_data+'.tmspm16000.snippet.vocab')
 
         batcher = Batcher(batch_size=64)
 
         inference = AutoRegressiveInference(search_strategy= BeamSearch(len_norm= PolynomialNormalization(apply_during_search=True),beam_size= 5),post_process= 'join-piece')
         layer_dim = self.layer_dim
 	
-	if self.embedding == 'SimpleWordEmbedding':
-		model = DefaultTranslator(
+        if self.embedding == 'SimpleWordEmbedding':
+                  model = DefaultTranslator(
 		  src_reader=PlainTextReader(vocab=src_vocab),
 		  trg_reader=PlainTextReader(vocab=trg_vocab),
 		  src_embedder=SimpleWordEmbedder(emb_dim=layer_dim,vocab_size=len(src_vocab)),
@@ -112,17 +110,19 @@ class MinedRunner():
 									    input_feeding= False,
 									    bridge=CopyBridge(dec_dim=layer_dim)),
 		  inference=inference)
-	else:
-		model = DefaultTranslator(
-		  src_reader=PlainTextReader(vocab=src_vocab),
-		  trg_reader=PlainTextReader(vocab=trg_vocab),
-		  src_embedder=PretrainedSimpleWordEmbedder(filename= self.embedding,emb_dim=layer_dim,vocab = src_vocab),
 
-		  encoder=BiLSTMSeqTransducer(input_dim=layer_dim, hidden_dim=layer_dim, layers=self.layers),
-		  attender=MlpAttender(hidden_dim=layer_dim, state_dim=layer_dim, input_dim=layer_dim),
-		  trg_embedder= PretrainedSimpleWordEmbedder(filename= self.trg_embedding,emb_dim=layer_dim,vocab = src_vocab),
+        else:
+                  model = DefaultTranslator(
+                  src_reader=PlainTextReader(vocab=src_vocab),
+                  trg_reader=PlainTextReader(vocab=trg_vocab),
+                  src_embedder=PretrainedSimpleWordEmbedder(filename= self.embedding,emb_dim=layer_dim,vocab = src_vocab),
 
-		    decoder=AutoRegressiveDecoder(input_dim=layer_dim,
+                  encoder=BiLSTMSeqTransducer(input_dim=layer_dim, hidden_dim=layer_dim, layers=self.layers),
+
+                  attender=MlpAttender(hidden_dim=layer_dim, state_dim=layer_dim, input_dim=layer_dim),
+                  trg_embedder= PretrainedSimpleWordEmbedder(filename= self.trg_embedding,emb_dim=layer_dim,vocab = src_vocab),
+
+                  decoder=AutoRegressiveDecoder(input_dim=layer_dim,
 										 rnn=UniLSTMSeqTransducer(input_dim=layer_dim, hidden_dim=layer_dim,
 													  ),
 										transform=AuxNonLinear(input_dim=layer_dim, output_dim=layer_dim,
@@ -144,8 +144,8 @@ class MinedRunner():
           lr_decay= 0.5,
           restart_trainer= True,
           run_for_epochs=self.epochs,
-          src_file= f"{EXP_DIR}/conala-corpus/conala-trainnodev+mined.tmspm16000.intent",
-          trg_file= f"{EXP_DIR}/conala-corpus/conala-trainnodev+mined.tmspm16000.snippet",
+          src_file= f"{EXP_DIR}/conala-corpus/"+self.mined_data+".tmspm16000.intent",
+          trg_file= f"{EXP_DIR}/conala-corpus/"+self.mined_data+".tmspm16000.snippet",
           dev_tasks=[LossEvalTask(src_file=f"{EXP_DIR}/conala-corpus/conala-dev.tmspm16000.intent",
                                   ref_file= f'{EXP_DIR}/conala-corpus/conala-dev.tmspm16000.snippet',
                                   model=model,
