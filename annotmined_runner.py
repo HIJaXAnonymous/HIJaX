@@ -28,7 +28,8 @@ from xnmt.search_strategies import BeamSearch
 from xnmt.length_norm import PolynomialNormalization
 
 class MinedRunner():
-    def __init__(self, vocab_size=16000, model_type='unigram', min_freq=2, layers=1, layer_dim=128, alpha=0.001, epochs=5,embedding='SimpleWordEmbedding'):
+    def __init__(self, vocab_size=16000, model_type='unigram', min_freq=2, layers=1, layer_dim=128, alpha=0.001, epochs=5,embedding='SimpleWordEmbedding'
+		, mined_data = 'conala-trainnodev+mined' ):
         self.vocab_size = vocab_size
         self.model_type = model_type
         self.min_freq = min_freq
@@ -37,7 +38,7 @@ class MinedRunner():
         self.alpha = alpha
         self.epochs = epochs
 	self.embedding = embedding
-
+	self.mined_data = mined_data
 
     def run(self):
         seed=13
@@ -54,32 +55,36 @@ class MinedRunner():
         xnmt.tee.utils.dy.DynetParams().set_mem(1024) #Doesnt work figure out how to set memory
         ParamManager.init_param_col()
         ParamManager.param_col.model_file = model_file
+	
 
-        pre_runner=PreprocRunner(tasks= [PreprocTokenize(in_files=[f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.snippet',
-                                                                   f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.intent',
+        pre_runner=PreprocRunner(tasks= [PreprocTokenize(in_files=[f'{EXP_DIR}/conala-corpus/'+self.mined_data+'.snippet',
+                                                                   f'{EXP_DIR}/conala-corpus/'+self.mined_data+'.intent',
                                                                    f'{EXP_DIR}/conala-corpus/conala-dev.intent',
                                                                    f'{EXP_DIR}/conala-corpus/conala-dev.snippet',
                                                                    f'{EXP_DIR}/conala-corpus/conala-test.intent',
-                                                                   f'{EXP_DIR}/conala-corpus/conala-test.snippet'],
-                                                         out_files= [f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.tmspm16000.snippet',
+                                                                   f'{EXP_DIR}/conala-corpus/conala-test.snippet',
+								   f'{EXP_DIR}/conala-corpus/conala-unique_mined.intent',
+								   f'{EXP_DIR}/conala-corpus/conala-unique_mined.snippet'],
+                                                         out_files= [f'{EXP_DIR}/conala-corpus/'+self.mined_data+'.tmspm16000.snippet',
                                                                      f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.tmspm16000.intent',
                                                                      f'{EXP_DIR}/conala-corpus/conala-dev.tmspm16000.intent',
                                                                      f'{EXP_DIR}/conala-corpus/conala-dev.tmspm16000.snippet',
                                                                      f'{EXP_DIR}/conala-corpus/conala-test.tmspm16000.intent',
-                                                                     f'{EXP_DIR}/conala-corpus/conala-test.tmspm16000.snippet'],
+                                                                     f'{EXP_DIR}/conala-corpus/conala-test.tmspm16000.snippet'
+								    ],
                                                          specs= [{'filenum':'all',
                                                                  'tokenizers':[SentencepieceTokenizer(
-                                                                     train_files= [f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.intent',
-                                                                         f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.snippet'],vocab_size=self.vocab_size,
-                                                                 model_type= self.model_type,model_prefix= 'conala-corpus/conala-trainnodev+mined.tmspm16000.spm')]}])
-            ,PreprocVocab(in_files= [f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.tmspm16000.intent',
-                                     f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.tmspm16000.snippet'],
-                          out_files=[f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.tmspm16000.intent.vocab',
-                                     f'{EXP_DIR}/conala-corpus/conala-trainnodev+mined.tmspm16000.snippet.vocab'],
+                                                                     train_files= [f'{EXP_DIR}/conala-corpus/'+self.mined_data+'.intent',
+                                                                         f'{EXP_DIR}/conala-corpus/'+self.mined_data+'.snippet'],vocab_size=self.vocab_size,
+                                                                 model_type= self.model_type,model_prefix= 'conala-corpus/'+self.mined_data+'.tmspm16000.spm')]}])
+            ,PreprocVocab(in_files= [f'{EXP_DIR}/conala-corpus/'+self.mined_data+'.tmspm16000.intent',
+                                     f'{EXP_DIR}/conala-corpus/'+self.mined_data+'.tmspm16000.snippet'],
+                          out_files=[f'{EXP_DIR}/conala-corpus/'+self.mined_data+'.tmspm16000.intent.vocab',
+                                     f'{EXP_DIR}/conala-corpus/'+self.mined_data+'.tmspm16000.snippet.vocab'],
                           specs=[{'filenum':'all','filters':[VocabFiltererFreq(min_freq = self.min_freq)]}])],overwrite=False)
 
-        src_vocab = Vocab(vocab_file=f"{EXP_DIR}/conala-corpus/conala-trainnodev+mined.tmspm16000.intent.vocab")
-        trg_vocab = Vocab(vocab_file=f"{EXP_DIR}/conala-corpus/conala-trainnodev+mined.tmspm16000.snippet.vocab")
+        src_vocab = Vocab(vocab_file=f"{EXP_DIR}/conala-corpus/'+self.mined_data+'.tmspm16000.intent.vocab")
+        trg_vocab = Vocab(vocab_file=f"{EXP_DIR}/conala-corpus/'+self.mined_data+'.tmspm16000.snippet.vocab")
 
         batcher = Batcher(batch_size=64)
 
