@@ -8,7 +8,9 @@ from taisazero.email_tool import EmailTool
 
 #Add your options here and update the loop in ultraLauncher.bash
 ant_mined_options = [
-    MinedRunner(model_type='unigram',epochs= 10,layers = 3,layer_dim =128),
+    MinedRunner(model_type='unigram',epochs= 10,layers = 1,layer_dim =128),
+    MinedRunner(model_type='unigram',epochs= 10,layers = 1,layer_dim =128, embedding = 'embeddings/conala-annotmined-input-stemmed.vec',
+                trg_embedding = 'embeddings/conala-annotmined-output-stemmed.vec)
 ]
 
 ant_mined = ant_mined_options[0]
