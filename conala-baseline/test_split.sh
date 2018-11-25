@@ -27,13 +27,14 @@ for f in intent snippet; do
   head -n 400 < conala-train.$f > conala-dev.$f
   tail -n +401 < conala-train.$f > conala-trainnodev.$f
   cat conala-trainnodev.$f <(head -n 100000 conala-mined.$f) > conala-trainnodev+mined.$f
+  cat conala-trainnodev.$f < conala-unique_mined.$f > conala-trainnodev+unique-mined.$f
 done
 
-for f in intent snippet; do
-    head -n 400 < conala-train.$f > conala-dev.$f
-    tail -n +401 < conala-train.$f > conala-trainnodev.$f
-    cat conala-trainnodev.$f conala-unique-mined.$f > conala-trainnodev+unique-mined.$f
-done
+#for f in intent snippet; do
+#    head -n 400 < conala-train.$f > conala-dev.$f
+#    tail -n +401 < conala-train.$f > conala-trainnodev.$f
+#    cat conala-trainnodev.$f <(conala-unique_mined.$f) > conala-trainnodev+unique-mined.$f
+#done
 
 
 cd $WDIR

@@ -9,12 +9,12 @@ echo "Date: $(date '+%A %W %Y %X')"
 
 echo "Running annotmined\n"
 
-python annotmined_launcher.py $1
+#python annotmined_launcher.py $1
 
 #Moved from annotmined_launcher.py
-python conala-baseline/preproc/seq2seq_output_to_code.py results/annotmined.test.hyp conala-corpus/conala-test.json.seq2seq results/annotmined.test.json
-python conala-baseline/eval/conala_eval.py --strip_ref_metadata --input_ref conala-corpus/conala-test.json --input_hyp results/annotmined.test.json
-cp results/annotmined.test.json results/answer_annotmined.txt
+#python conala-baseline/preproc/seq2seq_output_to_code.py results/annotmined.test.hyp conala-corpus/conala-test.json.seq2seq results/annotmined.test.json
+#python conala-baseline/eval/conala_eval.py --strip_ref_metadata --input_ref conala-corpus/conala-test.json --input_hyp results/annotmined.test.json
+#cp results/annotmined.test.json results/answer_annotmined.txt
 
 echo "Date: $(date '+%A %W %Y %X')"
 echo "Running annot\n"

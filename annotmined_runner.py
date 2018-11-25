@@ -73,6 +73,7 @@ class MinedRunner():
 								    ],
                                                          specs= [{'filenum':'all',
                                                                  'tokenizers':[SentencepieceTokenizer(
+                                                                     hard_vocab_limit=False,
                                                                      train_files= [f'{EXP_DIR}/conala-corpus/'+self.mined_data+'.intent',
                                                                          f'{EXP_DIR}/conala-corpus/'+self.mined_data+'.snippet'],vocab_size=self.vocab_size,
                                                                  model_type= self.model_type,model_prefix= 'conala-corpus/'+self.mined_data+'.tmspm16000.spm')]}])
