@@ -60,12 +60,12 @@ def canonicalize_code(code, slot_map):
 
 def decanonicalize_code(code, slot_map):
     try:
-      slot2string = {x[0]: x[1]['value'] for x in list(slot_map.items())}
+      slot2string = {x[0]: x[1]  for x in list(slot_map.items())}
       py_ast = ast.parse(code)
       replace_strings_in_ast(py_ast, slot2string)
       raw_code = astor.to_source(py_ast)
-      # for slot_name, slot_info in slot_map.items():
-      #     raw_code = raw_code.replace(slot_name, slot_info['value'])
+      for slot_name, slot_info in slot_map.items():
+           raw_code = raw_code.replace(slot_info, slot_name)
 
       return raw_code.strip()
     except:

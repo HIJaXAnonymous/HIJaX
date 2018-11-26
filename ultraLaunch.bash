@@ -6,7 +6,7 @@
 #The outer preproc loop
 for i in `seq 0 0`; do #Change based on preprocess options
 #	./conala-baseline/setup.bash $i
-	for j in `seq 0 2`; do #Change based on model options
+	for j in `seq 0 1`; do #Change based on model options
 		#Run the model using whatever you have defined for that number
 		./superLaunch.bash $j
 
