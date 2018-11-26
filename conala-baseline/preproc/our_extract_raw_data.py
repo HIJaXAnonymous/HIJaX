@@ -20,6 +20,7 @@ if __name__ == '__main__':
     canonOptions = [
         Canonical(remove=['\ba\b', '\ban\b'], remove_punctuation=True),
         Canonical(lower=True),
+        Canonical(std_var= True)
     ]
 
     canonSelect = int(sys.argv[1])
