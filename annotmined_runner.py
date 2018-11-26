@@ -116,12 +116,12 @@ class MinedRunner():
                   model = DefaultTranslator(
                   src_reader=PlainTextReader(vocab=src_vocab),
                   trg_reader=PlainTextReader(vocab=trg_vocab),
-                  src_embedder=PretrainedSimpleWordEmbedder(filename= self.embedding,emb_dim=layer_dim,vocab = src_vocab),
+                  src_embedder=PretrainedSimpleWordEmbedder(filename= self.embedding,emb_dim=100,vocab = src_vocab),
 
                   encoder=BiLSTMSeqTransducer(input_dim=layer_dim, hidden_dim=layer_dim, layers=self.layers),
 
                   attender=MlpAttender(hidden_dim=layer_dim, state_dim=layer_dim, input_dim=layer_dim),
-                  trg_embedder= PretrainedSimpleWordEmbedder(filename= self.trg_embedding,emb_dim=layer_dim,vocab = src_vocab),
+                  trg_embedder= PretrainedSimpleWordEmbedder(filename= self.trg_embedding,emb_dim=100,vocab = trg_vocab),
 
                   decoder=AutoRegressiveDecoder(input_dim=layer_dim,
 										 rnn=UniLSTMSeqTransducer(input_dim=layer_dim, hidden_dim=layer_dim,
