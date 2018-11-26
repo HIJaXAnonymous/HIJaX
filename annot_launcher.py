@@ -8,7 +8,11 @@ from taisazero.email_tool import EmailTool
 
 #Add your options here and update the loop in ultraLauncher.bash
 ant_options = [
-    AnnotRunner(model_type='unigram',epochs= 15, layer_dim= 100, alpha= 0.01)
+    AnnotRunner(model_type='unigram',epochs= 30, layer_dim= 128, alpha= 0.01),	
+    AnnotRunner(model_type='unigram',epochs= 30, layer_dim= 128, alpha= 0.01,min_freq=12),
+AnnotRunner(model_type='unigram',epochs= 25, layer_dim= 128, alpha= 0.01,min_freq=12,layers=2)
+
+    
 ]
 
 ant = ant_options[0]

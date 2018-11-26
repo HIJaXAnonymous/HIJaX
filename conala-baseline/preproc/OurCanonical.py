@@ -11,7 +11,6 @@ import string
 
 
 QUOTED_STRING_RE = re.compile(r"(?P<quote>[`'\"])(?P<string>.*?)(?P=quote)")
-rgx_list = ['how to', 'how (do|can) (i|you)', '\(?in? python[ :)]*', 'how to', '[a-z ]*(possible|way) to']
 
 def replace_strings_in_ast(py_ast, string2slot):
     for node in ast.walk(py_ast):
@@ -54,7 +53,8 @@ class Canonical:
         self.slot_map = dict()
         
         #Compile all the removes!
-        self.remove = re.compile('|'.join(re.compile(x).pattern for x in remove)) 
+        #self.remove = re.compile('|'.join(re.compile(x).pattern for x in remove))
+        self.remove = remove
 
         #Compile the replaces too
         self.replace = {}
@@ -73,11 +73,9 @@ class Canonical:
         if (not self.std_var):
             return intent
 
-        count = 0;
         for i in range(len(str_matches)):
             if not str_matches[i][1] in self.slot_map:
-                self.slot_map[str_matches[i][1]] = "VAR" + str(count)
-                count = count + 1
+                self.slot_map[str_matches[i][1]] = "var"
             intent = intent.replace(str_matches[i][0] + str_matches[i][1] + str_matches[i][0], self.slot_map[str_matches[i][1]])
 
         return intent
@@ -111,7 +109,8 @@ class Canonical:
 
         if (self.remove_punctuation): intent = intent.translate(self.translator) 
 
-        intent = self.remove.sub('', intent)
+        for rgx_match in self.remove:
+            intent = re.sub(rgx_match, '', intent)
 
         for match, repl in self.replace.items():
             intent = match.sub(repl, intent)
@@ -123,6 +122,6 @@ class Canonical:
             tokens = intent.split(" ")
             for i in range(0, len(tokens)):
                 tokens[i] = self.stemmer.stem(tokens[i])
-            intent = "".join(tokens)
+            intent = " ".join(tokens)
 
         return intent

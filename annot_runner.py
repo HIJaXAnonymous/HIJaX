@@ -87,7 +87,7 @@ class AnnotRunner():
         model = DefaultTranslator(
           src_reader=PlainTextReader(vocab=src_vocab),
           trg_reader=PlainTextReader(vocab=trg_vocab),
-          src_embedder=PretrainedSimpleWordEmbedder(filename='conala-mined-input.vec',emb_dim=layer_dim,vocab = src_vocab),
+          src_embedder=SimpleWordEmbedder(emb_dim=layer_dim,vocab = src_vocab),
 
           encoder=BiLSTMSeqTransducer(input_dim=layer_dim, hidden_dim=layer_dim, layers=self.layers),
           attender=MlpAttender(hidden_dim=layer_dim, state_dim=layer_dim, input_dim=layer_dim),

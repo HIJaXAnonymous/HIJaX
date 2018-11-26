@@ -3,7 +3,7 @@
 exec > >(tee -ia ~/log.txt | tee -ia >(grep -e 'BLUE4' -e 'Date' >> ~/shortLog.txt))
 exec 2>&1
 
-set -e
+#set -e
 
 echo "Date: $(date '+%A %W %Y %X')"
 
