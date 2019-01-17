@@ -1,5 +1,5 @@
 # Team UNCC - CoNaLa Challenge
-This repository contains our submission for the [CoNaLa Challenge competition][https://competitions.codalab.org/competitions/19175]. Our team members are: Erfan Al-Hossami, Mariah Olson, and Brandon Beckwidth.
+This repository contains our submission for the [CoNaLa Challenge competition](https://competitions.codalab.org/competitions/19175). Our team members are: Erfan Al-Hossami, Mariah Olson, and Brandon Beckwidth.
 
 ## Architecture Diagram
 
@@ -14,9 +14,9 @@ Before setting up our project we'd like to make sure you have some prerequisite 
 #### Set up a cluster account (Optional)
 
 
-UNC Charlotte provides a cluster for educational purposes, [*Mamba*] [https://urc.uncc.edu/educational-clusters/mamba-user-notes], and a reserch cluster, [*Copperhead*][https://urc.uncc.edu/faqs/copperhead-user-notes]. Request an account in the appropriate cluster using the links mentioned earlier.
+UNC Charlotte provides a cluster for educational purposes, [*Mamba*] (https://urc.uncc.edu/educational-clusters/mamba-user-notes), and a reserch cluster, [*Copperhead*](https://urc.uncc.edu/faqs/copperhead-user-notes). Request an account in the appropriate cluster using the links mentioned earlier.
 
-To use the cluster in UNC Charlotte you need to have *Duo* set up on your mobile device & UNC Charlotte account. Follow this [guide]  to setup Duo. [https://spaces.uncc.edu/pages/viewpage.action?pageId=35651686]
+To use the cluster in UNC Charlotte you need to have *Duo* set up on your mobile device & UNC Charlotte account. Follow this [guide] (https://spaces.uncc.edu/pages/viewpage.action?pageId=35651686) to setup Duo.
 
 **Note:** Since training the model takes a long time we highly recommend using a computer cluster.
 
