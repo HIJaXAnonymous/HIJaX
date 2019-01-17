@@ -45,7 +45,7 @@ If you are not using the cluster, install **Python 3.7** from [*Anaconda*](https
 
 ### Step 1: 
 ### Step 1: Clone
-Run the following command in terminal/command prompt ``git clone https://github.com/taisazero/iTzFine---English-to-Python.git``
+Run the following command in terminal/command prompt ``git clone https://github.com/taisazero/UNCC-CoNaLa.git``
 
 
 
