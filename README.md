@@ -35,19 +35,12 @@ To use the cluster in UNC Charlotte you need to have *Duo* set up on your mobile
 
 **Note:** Since training the model takes a long time we highly recommend using a computer cluster.
 
-
-### Python
-
-If you are using the cluster run the following command to enable **Python 3.7 with CUDA**: `module load cuda/8.0 cudnn/6.0-cuda8 anaconda3/5.0.1-cuda8` - Thanks to the UNCC Cluster Support Team for the help :').
-
-If you are not using the cluster, install **Python 3.7** from [*Anaconda*](https://www.anaconda.com/download/).
-
-
 ## UNCC Model Setup on Linux
 This section is written based on our setup experience on UNCC's *Copperhead* cluster which runs *Red Hat's Linux 7.5*.
 
 ### Step 1: Python Setup
- To access Python 3 with cuda run the following command ``module load cuda/8.0 cudnn/6.0-cuda8 anaconda3/5.0.1-cuda8``
+ If you are using the cluster run the following command to enable **Python 3.7 with CUDA**: `module load cuda/8.0 cudnn/6.0-cuda8 anaconda3/5.0.1-cuda8` - Thanks to the UNCC Cluster Support Team for the help :').
+If you are not using the cluster, install **Python 3.7** from [*Anaconda*](https://www.anaconda.com/download/).
  **Note:** You need to run the above command on the cluster every time you login because the default python version is 2.7.
  **Optional:** To make *Python 3.7 w/ CUDA* the default Python run the following command ``echo 'module load cuda/8.0 cudnn/6.0-cuda8 anaconda3/5.0.1-cuda8' >> ~/.bashrc``
  ### Step 2: Dependencies Setup
