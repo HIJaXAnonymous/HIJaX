@@ -88,7 +88,7 @@ Run ``bash ultraLaunch.bash`` for a test run. It will take around 30 minutes. Th
 ``qsub -q copperhead -l walltime=36:00:00 -d $(pwd) -l nodes=1:ppn=16 -l mem="8GB" ./ultraLauncher.bash``
 * Feel free to exit the terminal and leave it, the job will keep running until it's done.
 ## More Information
-For more information on what each file and folder contains, please visit this [wikipage](to_add.com).
+For more information on what each file and folder contains, please visit this **TO BE ADDED**.
 
 ## Thanks & Recognitions    <img src="https://thumbs.gfycat.com/TepidRequiredHeifer-size_restricted.gif" width="65">
  
