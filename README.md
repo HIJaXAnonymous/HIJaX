@@ -87,6 +87,6 @@ For more information on what each file and folder contains, please visit this **
 
 ## Thanks & Recognitions    <img src="https://thumbs.gfycat.com/TepidRequiredHeifer-size_restricted.gif" width="65">
  
-* Our team would like to thank our advisor [Dr. Samira Shaikh](https://webpages.uncc.edu/sshaikh2/index.html), for her continous support for this project.
+* Our team would like to thank our advisor [Dr. Samira Shaikh](https://webpages.uncc.edu/sshaikh2/index.html) for her continous support for this project.
 
 * We'd also like to recognize the authors of [xnmt](https://github.com/neulab/xnmt) & the organizers of the [CoNaLa challenge](https://conala-corpus.github.io/) for making our project possible.
