@@ -18,7 +18,7 @@ This repository contains our submission for the [CoNaLa Challenge competition](h
   
 ## Architecture Diagram
 
-To be added.
+![CoNaLa Architecture Diagram](https://raw.githubusercontent.com/taisazero/UNCC-CoNaLa/master/CoNaLa%20Architecture%20Diagram.jpg?token=APRFVT-R5SUJhNt3PrOOlVgr0KHogUZzks5ctXlgwA%3D%3D)
 
 
 ## Setup Prerequisites
