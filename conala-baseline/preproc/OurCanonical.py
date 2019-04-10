@@ -50,7 +50,6 @@ class Canonical:
     #lower converts intent to lower case when set to True
     #std_var Standardize Variables, replaces variables with standardized names when set to True
     def __init__(self, remove = [], replace = {}, stemmer = None, remove_punctuation = False, lower = False, std_var = False):
-        self.slot_map = dict()
         
         #Compile all the removes!
         #self.remove = re.compile('|'.join(re.compile(x).pattern for x in remove))
@@ -69,34 +68,35 @@ class Canonical:
     def canonicalize_intent(self, intent):
         str_matches = QUOTED_STRING_RE.findall(intent)
 
-        self.slot_map = dict()
+        slot_map = dict()
         if (not self.std_var):
             return intent
-
+        var_num = 0
         for i in range(len(str_matches)):
-            if not str_matches[i][1] in self.slot_map:
-                self.slot_map[str_matches[i][1]] = "var"
-            intent = intent.replace(str_matches[i][0] + str_matches[i][1] + str_matches[i][0], self.slot_map[str_matches[i][1]])
+            if not str_matches[i][1] in slot_map:
+                slot_map[str_matches[i][1]] = "var"+str(var_num)
+                var_num += 1
+            intent = intent.replace(str_matches[i][0] + str_matches[i][1] + str_matches[i][0], slot_map[str_matches[i][1]])
 
-        return intent
+        return intent, slot_map
 
-    def canonicalize_code(self, code):
-        #string2slot = {x[1]['value']: x[0] for x in list(self.slot_map.items())}
-        
+    def canonicalize_code(self, code, slot_map):
+
+        string2slot = {x[1]: x[0] for x in list(slot_map.items())}
         py_ast = ast.parse(code)
-        replace_strings_in_ast(py_ast, self.slot_map)
+        replace_strings_in_ast(py_ast, string2slot)
         canonical_code = astor.to_source(py_ast)
 
         return canonical_code
 
-    def decanonicalize_code(self, code):
+    def decanonicalize_code(self, code, slot_map):
         try:
-          #slot2string = {x[0]: x[1]['value'] for x in list(self.slot_map.items())}
+          slot2string = {x[0]: x[1] for x in list(slot_map.items())}
           py_ast = ast.parse(code)
-          replace_strings_in_ast(py_ast, self.slot_map)
+          replace_strings_in_ast(py_ast, slot2string)
           raw_code = astor.to_source(py_ast)
-          # for slot_name, slot_info in slot_map.items():
-          #     raw_code = raw_code.replace(slot_name, slot_info['value'])
+          #for slot_name, slot_info in self.slot_map.items():
+           #   raw_code = raw_code.replace(slot_name, slot_info['value'])
 
           return raw_code.strip()
         except:

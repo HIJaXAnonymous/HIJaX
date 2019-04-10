@@ -8,7 +8,8 @@ import json
 import sys
 import nltk
 import traceback
-
+import ast
+import astor
 from OurCanonical import *
 from util import get_encoded_code_tokens, detokenize_code, encode_tokenized_code, encoded_code_tokens_to_code, tokenize, compare_ast
 
@@ -73,12 +74,12 @@ if __name__ == '__main__':
             intent_tokens = []
             if rewritten_intent:
                 try:
-                    canonical_intent = canon.canonicalize_intent(rewritten_intent)
+                    canonical_intent, slot_map = canon.canonicalize_intent(rewritten_intent)
                     final_intent = canon.clean_intent(canonical_intent)
                     intent_tokens = nltk.word_tokenize(final_intent)
 
-                    canonical_snippet = canon.canonicalize_code(snippet)
-                    decanonical_snippet = canon.decanonicalize_code(canonical_snippet)
+                    canonical_snippet = canon.canonicalize_code(snippet,slot_map)
+                    decanonical_snippet = canon.decanonicalize_code(canonical_snippet,slot_map)
                     snippet_reconstr = astor.to_source(ast.parse(snippet)).strip()
                     decanonical_snippet_reconstr = astor.to_source(ast.parse(decanonical_snippet)).strip()
                     encoded_reconstr_code = get_encoded_code_tokens(decanonical_snippet_reconstr)
