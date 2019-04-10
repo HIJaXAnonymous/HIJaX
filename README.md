@@ -80,7 +80,7 @@ Run ``bash ultraLaunch.bash`` for a test run. It will take around 30 minutes. Th
 
 ### Running Jobs
 * To submit a job to the cluster run the following command:
-``qsub -q copperhead -l walltime=36:00:00 -d $(pwd) -l nodes=1:ppn=16 -l mem="8GB" ./ultraLauncher.bash``
+``qsub -q copperhead -l walltime=36:00:00 -d $(pwd) -l nodes=1:ppn=16 -l mem="8GB" ./ultraLaunch.bash``
 * Feel free to exit the terminal and leave it, the job will keep running until it's done.
 ## More Information
 For more information on what each file and folder contains, please visit this **TO BE ADDED**.
