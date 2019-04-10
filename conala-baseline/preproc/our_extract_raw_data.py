@@ -87,6 +87,7 @@ if __name__ == '__main__':
                     print('.', end='')
                     if not compare_ast(ast.parse(decoded_reconstr_code), ast.parse(snippet)):
                         print(i)
+		#	print(intent)
                         print('Original Snippet: %s' % snippet_reconstr)
                         print('Tokenized Snippet: %s' % ' '.join(encoded_reconstr_code))
                         print('decoded_reconstr_code: %s' % decoded_reconstr_code)
@@ -101,7 +102,7 @@ if __name__ == '__main__':
 
                     failed = True
                 finally:
-                    example['slot_map'] = canon.slot_map
+                    example['slot_map'] = slot_map
 
             if rewritten_intent is None:
                 encoded_reconstr_code = get_encoded_code_tokens(snippet.strip())
