@@ -68,6 +68,8 @@ class Canonical:
     def canonicalize_intent(self, intent):
         str_matches = QUOTED_STRING_RE.findall(intent)
 
+        # Here we can also add ways to find variables in intents
+
         slot_map = dict()
         if (not self.std_var):
             return intent
@@ -81,22 +83,26 @@ class Canonical:
         return intent, slot_map
 
     def canonicalize_code(self, code, slot_map):
+        # add ways to find variable names in snippet before canonicalization
 
-        #string2slot = {x[1]: x[0] for x in list(slot_map.items())}
+        # one letter variable names
+        # after/before = sign
+        #find some pos tagger like tokenizer
+
+        string2slot = {x[0]: x[1] for x in list(slot_map.items())}
         py_ast = ast.parse(code)
-        replace_strings_in_ast(py_ast, slot_map)
+        replace_strings_in_ast(py_ast, string2slot)
         canonical_code = astor.to_source(py_ast)
-
         return canonical_code
 
     def decanonicalize_code(self, code, slot_map):
         try:
-            slot2string = {x[0]: x[1] for x in list(slot_map.items())}
+            slot2string = {x[1]: x[0] for x in list(slot_map.items())}
             py_ast = ast.parse(code)
             replace_strings_in_ast(py_ast, slot2string)
             raw_code = astor.to_source(py_ast)
-            for slot_name, slot_info in self.slot_map.items():
-                raw_code = raw_code.replace(slot_info,slot_name)
+            #for slot_name, slot_info in self.slot_map.items():
+            #    raw_code = raw_code.replace(slot_info,slot_name)
 
             return raw_code.strip()
         except:
