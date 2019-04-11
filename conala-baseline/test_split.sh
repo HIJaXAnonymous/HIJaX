@@ -5,18 +5,18 @@ SDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 WDIR=`pwd`
 
 # Get the data
-#wget http://www.phontron.com/download/conala-corpus-v1.1.zip
-#unzip conala-corpus-v1.1.zip
+wget http://www.phontron.com/download/conala-corpus-v1.1.zip
+unzip conala-corpus-v1.1.zip
 
 # Extract data
-#cd $WDIR/subset_data
-#cp conala-unique_mined.json $WDIR/conala-corpus/conala-unique_mined.json
+cd $WDIR/subset_data
+cp conala-unique_mined.json $WDIR/conala-corpus/conala-unique_mined.json
 
-#cp conala-all_prob50_mined.json $WDIR/conala-corpus/conala-all_prob50_mined.json
+cp conala-all_prob50_mined.json $WDIR/conala-corpus/conala-all_prob50_mined.json
  
 cd $WDIR/conala-corpus
 
-#python $SDIR/preproc/our_extract_raw_data.py 1 # > raw_data.txt
+python $SDIR/preproc/our_extract_raw_data.py 1 # > raw_data.txt
 
 python $SDIR/preproc/json_to_seq2seq.py conala-train.json.seq2seq conala-train.intent conala-train.snippet
 python $SDIR/preproc/json_to_seq2seq.py conala-test.json.seq2seq conala-test.intent conala-test.snippet

@@ -95,18 +95,23 @@ class Canonical:
         canonical_code = astor.to_source(py_ast)
         return canonical_code
 
-    def decanonicalize_code(self, code, slot_map):
+      def decanonicalize_code(self, code, slot_map):
         try:
             slot2string = {x[1]: x[0] for x in list(slot_map.items())}
             py_ast = ast.parse(code)
             replace_strings_in_ast(py_ast, slot2string)
             raw_code = astor.to_source(py_ast)
-            #for slot_name, slot_info in self.slot_map.items():
-            #    raw_code = raw_code.replace(slot_info,slot_name)
 
             return raw_code.strip()
         except:
-            return code
+            print(code, file=sys.stderr)
+            print(slot_map, file=sys.stderr)
+            traceback.print_exc()
+            raw_code = code
+            for slot_name, slot_info in slot_map.items():
+                 raw_code = raw_code.replace(slot_info,slot_name)
+
+            return raw_code.strip()
 
     #Strips the intent based off of the object's parameters
     def clean_intent(self, intent):

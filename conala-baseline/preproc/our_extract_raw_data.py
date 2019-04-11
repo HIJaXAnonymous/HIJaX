@@ -59,12 +59,13 @@ if __name__ == '__main__':
             dataset = json.load(open(file_path))
         for i, example in enumerate(dataset):
             intent = example['intent']
-            if file_type == 'annotated':
-              rewritten_intent = example['rewritten_intent']
-            elif file_type == 'mined':
-              rewritten_intent = example['intent']
-            elif file_type == 'edited':
-              rewritten_intent = example['intent']
+            rewritten_intent = None
+            if file_type == 'annotated' and example['rewritten_intent'] != None:
+              rewritten_intent = example ['rewritten_intent']
+            else:
+              final_intent = canon.clean_intent(intent)
+            
+             
             snippet = example['snippet']
             # print(i)
             # code_tokens = get_encoded_code_tokens(snippet)
@@ -73,7 +74,7 @@ if __name__ == '__main__':
             failed = False
             intent_tokens = []
             total_snippets += 1
-            if rewritten_intent:
+            if rewritten_intent != None:
                 try:
                     canonical_intent, slot_map = canon.canonicalize_intent(rewritten_intent)
                     final_intent = canon.clean_intent(canonical_intent)
@@ -86,12 +87,12 @@ if __name__ == '__main__':
                     encoded_reconstr_code = get_encoded_code_tokens(decanonical_snippet_reconstr)
                     decoded_reconstr_code = encoded_code_tokens_to_code(encoded_reconstr_code)
                     print('.', end='')
-                    if not compare_ast(ast.parse(decoded_reconstr_code), ast.parse(snippet)):
-                        print(i)
-                        print('Intent: %s' % intent)
-                        print('Original Snippet: %s' % snippet_reconstr)
-                        print('Tokenized Snippet: %s' % ' '.join(encoded_reconstr_code))
-                        print('decoded_reconstr_code: %s' % decoded_reconstr_code)
+                    #if not compare_ast(ast.parse(decoded_reconstr_code), ast.parse(snippet)):
+                    print(i)
+                    print('Intent: %s' % intent)
+                    print('Original Snippet: %s' % snippet_reconstr)
+                    print('Tokenized Snippet: %s' % ' '.join(encoded_reconstr_code))
+                    print('decoded_reconstr_code: %s' % decoded_reconstr_code)
 
                 except:
                     print("Exception")
@@ -120,7 +121,7 @@ if __name__ == '__main__':
             example['intent_tokens'] = intent_tokens
             example['snippet_tokens'] = encoded_reconstr_code
             
-    
+        print ('Number of snippets in the set: '+ str(total_snippets))
         print ('Number of snippets that don\'t compile and were excluded: '+ str(num_failed))
         print ('% failed is: ' + str(float(num_failed/total_snippets)))
         json.dump(dataset, open(file_path + '.seq2seq', 'w'), indent=2)
