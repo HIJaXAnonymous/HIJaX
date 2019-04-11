@@ -43,8 +43,9 @@ if __name__ == '__main__':
         canon = canonOptions[canonSelect]
     else:
         print("Failed to set cannon...., using default")
-    
-    for file_path, file_type in [('conala-train.json', 'annotated'), ('conala-test.json', 'annotated'), ('conala-mined.jsonl', 'mined'),('conala-unique_mined.json','edited')]:
+    num_failed = 0
+    total_snippets = 0
+    for file_path, file_type in [('conala-train.json', 'annotated'), ('conala-test.json', 'annotated'), ('conala-mined.jsonl', 'mined'),('conala-unique_mined.json','edited'),('conala-all_prob50_mined.json','edited')]:
         print('extracting {} file {}'.format(file_type, file_path), file=sys.stderr)
 
         if file_type == 'annotated':
@@ -56,7 +57,6 @@ if __name__ == '__main__':
                     dataset.append(json.loads(line.strip()))
         elif file_type == 'edited':
             dataset = json.load(open(file_path))
-	
         for i, example in enumerate(dataset):
             intent = example['intent']
             if file_type == 'annotated':
@@ -72,6 +72,7 @@ if __name__ == '__main__':
 
             failed = False
             intent_tokens = []
+            total_snippets += 1
             if rewritten_intent:
                 try:
                     canonical_intent, slot_map = canon.canonicalize_intent(rewritten_intent)
@@ -87,7 +88,7 @@ if __name__ == '__main__':
                     print('.', end='')
                     if not compare_ast(ast.parse(decoded_reconstr_code), ast.parse(snippet)):
                         print(i)
-		#	print(intent)
+                        print('Intent: %s' % intent)
                         print('Original Snippet: %s' % snippet_reconstr)
                         print('Tokenized Snippet: %s' % ' '.join(encoded_reconstr_code))
                         print('decoded_reconstr_code: %s' % decoded_reconstr_code)
@@ -104,15 +105,22 @@ if __name__ == '__main__':
                 finally:
                     example['slot_map'] = slot_map
 
-            if rewritten_intent is None:
+            if rewritten_intent is None and not failed:
                 encoded_reconstr_code = get_encoded_code_tokens(snippet.strip())
-            else:
+            elif not failed:
                 encoded_reconstr_code = get_encoded_code_tokens(canonical_snippet.strip())
+            else:
+                num_failed += 1
+                #del dataset[i]
+                continue
 
             if not intent_tokens:
                 intent_tokens = nltk.word_tokenize(final_intent)
 
             example['intent_tokens'] = intent_tokens
             example['snippet_tokens'] = encoded_reconstr_code
-
+            
+    
+        print ('Number of snippets that don\'t compile and were excluded: '+ str(num_failed))
+        print ('% failed is: ' + str(float(num_failed/total_snippets)))
         json.dump(dataset, open(file_path + '.seq2seq', 'w'), indent=2)
