@@ -1,0 +1,1093 @@
+Date: Thursday 14 2019 04:38:04 AM
+Running annot\n
+[dynet] random seed: 1482615804
+[dynet] allocating memory: 512MB
+[dynet] memory allocation done.
+Setting ant
+> Preprocessing
+> Training
+Starting to read /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-trainnodev.tmspm4000.intent and /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-trainnodev.tmspm4000.snippet
+Done reading /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-trainnodev.tmspm4000.intent and /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-trainnodev.tmspm4000.snippet. Packing into batches.
+Done packing batches.
+The dy.parameter(...) call is now DEPRECATED.
+        There is no longer need to explicitly add parameters to the computation graph.
+        Any used parameter will be added automatically.
+[annot] Epoch 0.5187: train_loss/word=4.664650 (words=24291, words/sec=3455.06, time=0-00:00:07)
+[annot] Epoch 1.0000: train_loss/word=4.332943 (words=47452, words/sec=3425.09, time=0-00:00:13)
+> Checkpoint [annot]
+Starting to read /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent and /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.snippet
+Done reading /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent and /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.snippet. Packing into batches.
+Done packing batches.
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 1.0000 dev Loss: 3.866 (ref_len=9792) (time=0-00:00:45)
+[annot]              dev auxiliary BLEU4: 0.008781953766278989, 0.175270/0.019996/0.005121/0.000540 (BP = 0.884954, ratio=0.89, hyp_len=4901, ref_len=5500)
+             checkpoint took 0-00:00:31
+  best dev score, writing out model
+[annot] Epoch 1.0228: train_loss/word=3.772914 (words=819, words/sec=3718.40, time=0-00:00:45)
+[annot] Epoch 1.5394: train_loss/word=3.674469 (words=26166, words/sec=3456.12, time=0-00:00:53)
+[annot] Epoch 2.0000: train_loss/word=3.496777 (words=47452, words/sec=3420.83, time=0-00:00:59)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 2.0000 dev Loss: 3.059 (ref_len=9792) (time=0-00:01:09)
+[annot]              dev auxiliary BLEU4: 0.0, 0.282515/0.040532/0.006882/0.000000 (BP = 0.616264, ratio=0.67, hyp_len=3706, ref_len=5500)
+             checkpoint took 0-00:00:10
+  best dev score, writing out model
+[annot] Epoch 2.0106: train_loss/word=3.200272 (words=552, words/sec=2467.92, time=0-00:01:10)
+[annot] Epoch 2.5192: train_loss/word=2.828462 (words=25533, words/sec=3297.00, time=0-00:01:18)
+[annot] Epoch 3.0000: train_loss/word=2.697452 (words=47452, words/sec=3455.37, time=0-00:01:24)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 3.0000 dev Loss: 2.446 (ref_len=9792) (time=0-00:01:31)
+[annot]              dev auxiliary BLEU4: 0.0, 0.521439/0.063229/0.014646/0.000000 (BP = 0.180740, ratio=0.37, hyp_len=2029, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 3.0167: train_loss/word=2.339581 (words=885, words/sec=3776.70, time=0-00:01:31)
+[annot] Epoch 3.5344: train_loss/word=2.345829 (words=25577, words/sec=3439.68, time=0-00:01:39)
+[annot] Epoch 4.0000: train_loss/word=2.277164 (words=47452, words/sec=3264.10, time=0-00:01:45)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 4.0000 dev Loss: 2.196 (ref_len=9792) (time=0-00:01:52)
+[annot]              dev auxiliary BLEU4: 0.007278283620113266, 0.523738/0.093691/0.024979/0.002497 (BP = 0.174013, ratio=0.36, hyp_len=2001, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 4.0101: train_loss/word=2.273735 (words=422, words/sec=1864.62, time=0-00:01:53)
+[annot] Epoch 4.5157: train_loss/word=2.097498 (words=24905, words/sec=3484.71, time=0-00:02:00)
+[annot] Epoch 5.0000: train_loss/word=2.056848 (words=47452, words/sec=3289.57, time=0-00:02:07)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 5.0000 dev Loss: 2.033 (ref_len=9792) (time=0-00:02:13)
+[annot]              dev auxiliary BLEU4: 0.015327292963441888, 0.521069/0.101826/0.034115/0.011917 (BP = 0.224906, ratio=0.40, hyp_len=2207, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 5.0142: train_loss/word=1.990185 (words=837, words/sec=3299.60, time=0-00:02:14)
+[annot] Epoch 5.5293: train_loss/word=1.924014 (words=24850, words/sec=3320.29, time=0-00:02:21)
+[annot] Epoch 6.0000: train_loss/word=1.906377 (words=47452, words/sec=3385.19, time=0-00:02:28)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 6.0000 dev Loss: 1.937 (ref_len=9792) (time=0-00:02:35)
+[annot]              dev auxiliary BLEU4: 0.030651376747612737, 0.533891/0.143162/0.071332/0.047575 (BP = 0.241527, ratio=0.41, hyp_len=2272, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 6.0071: train_loss/word=2.016973 (words=335, words/sec=2867.11, time=0-00:02:35)
+[annot] Epoch 6.5167: train_loss/word=1.828185 (words=24985, words/sec=3439.27, time=0-00:02:42)
+[annot] Epoch 7.0000: train_loss/word=1.804820 (words=47452, words/sec=3275.68, time=0-00:02:49)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 7.0000 dev Loss: 1.870 (ref_len=9792) (time=0-00:02:57)
+[annot]              dev auxiliary BLEU4: 0.04742077774658942, 0.521935/0.146008/0.079272/0.058623 (BP = 0.345680, ratio=0.48, hyp_len=2667, ref_len=5500)
+             checkpoint took 0-00:00:07
+  best dev score, writing out model
+[annot] Epoch 7.0167: train_loss/word=1.823935 (words=738, words/sec=3384.10, time=0-00:02:57)
+[annot] Epoch 7.5354: train_loss/word=1.731709 (words=24925, words/sec=3445.99, time=0-00:03:04)
+[annot] Epoch 8.0000: train_loss/word=1.719203 (words=47452, words/sec=3307.71, time=0-00:03:11)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 8.0000 dev Loss: 1.831 (ref_len=9792) (time=0-00:03:18)
+[annot]              dev auxiliary BLEU4: 0.04947021906834394, 0.535195/0.158988/0.087652/0.066478 (BP = 0.331524, ratio=0.48, hyp_len=2614, ref_len=5500)
+             checkpoint took 0-00:00:07
+  best dev score, writing out model
+[annot] Epoch 8.0177: train_loss/word=1.698763 (words=877, words/sec=4656.92, time=0-00:03:19)
+[annot] Epoch 8.5415: train_loss/word=1.649443 (words=25797, words/sec=3300.40, time=0-00:03:26)
+[annot] Epoch 9.0000: train_loss/word=1.649805 (words=47452, words/sec=3480.18, time=0-00:03:33)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 9.0000 dev Loss: 1.774 (ref_len=9792) (time=0-00:03:40)
+[annot]              dev auxiliary BLEU4: 0.06161331332278811, 0.538146/0.172414/0.086670/0.060940 (BP = 0.414108, ratio=0.53, hyp_len=2923, ref_len=5500)
+             checkpoint took 0-00:00:07
+  best dev score, writing out model
+[annot] Epoch 9.0177: train_loss/word=1.613132 (words=1013, words/sec=4196.06, time=0-00:03:41)
+[annot] Epoch 9.5354: train_loss/word=1.598343 (words=26017, words/sec=3423.27, time=0-00:03:48)
+[annot] Epoch 10.0000: train_loss/word=1.589114 (words=47452, words/sec=3375.10, time=0-00:03:54)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 10.0000 dev Loss: 1.749 (ref_len=9792) (time=0-00:04:01)
+[annot]              dev auxiliary BLEU4: 0.054143066098460015, 0.546927/0.170047/0.089724/0.061964 (BP = 0.359051, ratio=0.49, hyp_len=2717, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 10.0222: train_loss/word=1.442219 (words=793, words/sec=4503.36, time=0-00:04:02)
+[annot] Epoch 10.5389: train_loss/word=1.528860 (words=24511, words/sec=3389.79, time=0-00:04:09)
+[annot] Epoch 11.0000: train_loss/word=1.534879 (words=47452, words/sec=3441.67, time=0-00:04:16)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 11.0000 dev Loss: 1.714 (ref_len=9792) (time=0-00:04:24)
+[annot]              dev auxiliary BLEU4: 0.07427376208233984, 0.510273/0.155408/0.075554/0.045474 (BP = 0.578112, ratio=0.65, hyp_len=3553, ref_len=5500)
+             checkpoint took 0-00:00:08
+  best dev score, writing out model
+[annot] Epoch 11.0162: train_loss/word=1.543140 (words=870, words/sec=3668.19, time=0-00:04:25)
+[annot] Epoch 11.5319: train_loss/word=1.472742 (words=24942, words/sec=3265.70, time=0-00:04:32)
+[annot] Epoch 12.0000: train_loss/word=1.484527 (words=47452, words/sec=3441.89, time=0-00:04:39)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 12.0000 dev Loss: 1.677 (ref_len=9792) (time=0-00:04:47)
+[annot]              dev auxiliary BLEU4: 0.07643535857183315, 0.524471/0.169997/0.081040/0.050599 (BP = 0.552767, ratio=0.63, hyp_len=3453, ref_len=5500)
+             checkpoint took 0-00:00:08
+  best dev score, writing out model
+[annot] Epoch 12.0167: train_loss/word=1.461044 (words=574, words/sec=3288.85, time=0-00:04:47)
+[annot] Epoch 12.5369: train_loss/word=1.471752 (words=25333, words/sec=3474.24, time=0-00:04:55)
+[annot] Epoch 13.0000: train_loss/word=1.442361 (words=47452, words/sec=3242.12, time=0-00:05:01)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 13.0000 dev Loss: 1.654 (ref_len=9792) (time=0-00:05:09)
+[annot]              dev auxiliary BLEU4: 0.0764893371737541, 0.521700/0.176788/0.089314/0.052680 (BP = 0.529958, ratio=0.61, hyp_len=3364, ref_len=5500)
+             checkpoint took 0-00:00:08
+  best dev score, writing out model
+[annot] Epoch 13.0157: train_loss/word=1.347692 (words=731, words/sec=3229.16, time=0-00:05:10)
+[annot] Epoch 13.5379: train_loss/word=1.378354 (words=25930, words/sec=3362.41, time=0-00:05:18)
+[annot] Epoch 14.0000: train_loss/word=1.397583 (words=47452, words/sec=3395.63, time=0-00:05:24)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 14.0000 dev Loss: 1.642 (ref_len=9792) (time=0-00:05:32)
+[annot]              dev auxiliary BLEU4: 0.07682165967119925, 0.533333/0.184588/0.093279/0.059854 (BP = 0.501722, ratio=0.59, hyp_len=3255, ref_len=5500)
+             checkpoint took 0-00:00:07
+  best dev score, writing out model
+[annot] Epoch 14.0101: train_loss/word=1.173856 (words=552, words/sec=2439.94, time=0-00:05:33)
+[annot] Epoch 14.5263: train_loss/word=1.369636 (words=25161, words/sec=3563.95, time=0-00:05:40)
+[annot] Epoch 15.0000: train_loss/word=1.360192 (words=47452, words/sec=3146.37, time=0-00:05:47)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 15.0000 dev Loss: 1.625 (ref_len=9792) (time=0-00:05:55)
+[annot]              dev auxiliary BLEU4: 0.09816603117421727, 0.518098/0.180194/0.100965/0.068745 (BP = 0.615277, ratio=0.67, hyp_len=3702, ref_len=5500)
+             checkpoint took 0-00:00:08
+  best dev score, writing out model
+[annot] Epoch 15.0116: train_loss/word=1.220280 (words=472, words/sec=3696.91, time=0-00:05:56)
+[annot] Epoch 15.5202: train_loss/word=1.309935 (words=23982, words/sec=3461.07, time=0-00:06:03)
+[annot] Epoch 16.0000: train_loss/word=1.325631 (words=47452, words/sec=3380.28, time=0-00:06:10)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 16.0000 dev Loss: 1.611 (ref_len=9792) (time=0-00:06:18)
+[annot]              dev auxiliary BLEU4: 0.08546499366480138, 0.541642/0.191489/0.104216/0.069063 (BP = 0.517045, ratio=0.60, hyp_len=3314, ref_len=5500)
+             checkpoint took 0-00:00:08
+  best dev score, writing out model
+[annot] Epoch 16.0081: train_loss/word=1.273701 (words=557, words/sec=2329.78, time=0-00:06:19)
+[annot] Epoch 16.5263: train_loss/word=1.284027 (words=25015, words/sec=3365.74, time=0-00:06:26)
+[annot] Epoch 17.0000: train_loss/word=1.290711 (words=47452, words/sec=3489.41, time=0-00:06:32)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 17.0000 dev Loss: 1.598 (ref_len=9792) (time=0-00:06:41)
+[annot]              dev auxiliary BLEU4: 0.09503720467142598, 0.535714/0.199544/0.110030/0.071743 (BP = 0.557607, ratio=0.63, hyp_len=3472, ref_len=5500)
+             checkpoint took 0-00:00:08
+  best dev score, writing out model
+[annot] Epoch 17.0172: train_loss/word=1.110889 (words=714, words/sec=3562.80, time=0-00:06:42)
+[annot] Epoch 17.5288: train_loss/word=1.244362 (words=24744, words/sec=3450.69, time=0-00:06:49)
+[annot] Epoch 18.0000: train_loss/word=1.254889 (words=47452, words/sec=3362.96, time=0-00:06:55)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 18.0000 dev Loss: 1.591 (ref_len=9792) (time=0-00:07:04)
+[annot]              dev auxiliary BLEU4: 0.08524876663890113, 0.527204/0.189332/0.097459/0.059902 (BP = 0.548684, ratio=0.62, hyp_len=3437, ref_len=5500)
+             checkpoint took 0-00:00:08
+  best dev score, writing out model
+[annot] Epoch 18.0202: train_loss/word=1.044436 (words=904, words/sec=3999.74, time=0-00:07:05)
+[annot] Epoch 18.5394: train_loss/word=1.228919 (words=25750, words/sec=3444.01, time=0-00:07:12)
+[annot] Epoch 19.0000: train_loss/word=1.226464 (words=47452, words/sec=3268.35, time=0-00:07:18)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 19.0000 dev Loss: 1.585 (ref_len=9792) (time=0-00:07:27)
+[annot]              dev auxiliary BLEU4: 0.10475370973233464, 0.543919/0.205584/0.119549/0.080782 (BP = 0.577860, ratio=0.65, hyp_len=3552, ref_len=5500)
+             checkpoint took 0-00:00:08
+  best dev score, writing out model
+[annot] Epoch 19.0202: train_loss/word=1.200500 (words=944, words/sec=4201.43, time=0-00:07:28)
+[annot] Epoch 19.5288: train_loss/word=1.199217 (words=25878, words/sec=3276.64, time=0-00:07:35)
+[annot] Epoch 20.0000: train_loss/word=1.195273 (words=47452, words/sec=3624.64, time=0-00:07:41)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 20.0000 dev Loss: 1.578 (ref_len=9792) (time=0-00:07:50)
+[annot]              dev auxiliary BLEU4: 0.10813981186839373, 0.561596/0.218770/0.130173/0.090748 (BP = 0.554042, ratio=0.63, hyp_len=3458, ref_len=5500)
+             checkpoint took 0-00:00:08
+  best dev score, writing out model
+[annot] Epoch 20.0152: train_loss/word=1.098886 (words=778, words/sec=3532.27, time=0-00:07:51)
+[annot] Epoch 20.5212: train_loss/word=1.159931 (words=24741, words/sec=3462.52, time=0-00:07:58)
+[annot] Epoch 21.0000: train_loss/word=1.169082 (words=47452, words/sec=3398.67, time=0-00:08:04)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 21.0000 dev Loss: 1.580 (ref_len=9792) (time=0-00:08:13)
+[annot]              dev auxiliary BLEU4: 0.10013631243845028, 0.531559/0.196054/0.108298/0.068331 (BP = 0.600898, ratio=0.66, hyp_len=3644, ref_len=5500)
+             checkpoint took 0-00:00:08
+[annot] Epoch 21.0182: train_loss/word=0.911481 (words=803, words/sec=3709.36, time=0-00:08:13)
+[annot] Epoch 21.5268: train_loss/word=1.136615 (words=24197, words/sec=3297.92, time=0-00:08:20)
+[annot] Epoch 22.0000: train_loss/word=1.145253 (words=47452, words/sec=3436.63, time=0-00:08:27)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 22.0000 dev Loss: 1.567 (ref_len=9792) (time=0-00:08:36)
+[annot]              dev auxiliary BLEU4: 0.12073776341407381, 0.543827/0.218432/0.127804/0.091660 (BP = 0.625126, ratio=0.68, hyp_len=3742, ref_len=5500)
+             checkpoint took 0-00:00:08
+  best dev score, writing out model
+[annot] Epoch 22.0202: train_loss/word=1.118171 (words=785, words/sec=3729.75, time=0-00:08:37)
+[annot] Epoch 22.5349: train_loss/word=1.088245 (words=24349, words/sec=3203.59, time=0-00:08:44)
+[annot] Epoch 23.0000: train_loss/word=1.113492 (words=47452, words/sec=3435.15, time=0-00:08:51)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 23.0000 dev Loss: 1.567 (ref_len=9792) (time=0-00:09:00)
+[annot]              dev auxiliary BLEU4: 0.12234057556282749, 0.522112/0.210801/0.126150/0.090393 (BP = 0.649988, ratio=0.70, hyp_len=3844, ref_len=5500)
+             checkpoint took 0-00:00:09
+  best dev score, writing out model
+[annot] Epoch 23.0197: train_loss/word=1.090730 (words=995, words/sec=4467.05, time=0-00:09:00)
+[annot] Epoch 23.5288: train_loss/word=1.072465 (words=24842, words/sec=3723.16, time=0-00:09:07)
+[annot] Epoch 24.0000: train_loss/word=1.082839 (words=47452, words/sec=3236.25, time=0-00:09:14)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 24.0000 dev Loss: 1.576 (ref_len=9792) (time=0-00:09:23)
+[annot]              dev auxiliary BLEU4: 0.11818300776258028, 0.532003/0.211044/0.119974/0.079353 (BP = 0.653613, ratio=0.70, hyp_len=3859, ref_len=5500)
+             checkpoint took 0-00:00:09
+[annot] Epoch 24.0081: train_loss/word=0.968915 (words=455, words/sec=1902.14, time=0-00:09:23)
+[annot] Epoch 24.5278: train_loss/word=1.055135 (words=25303, words/sec=3399.60, time=0-00:09:31)
+[annot] Epoch 25.0000: train_loss/word=1.063765 (words=47452, words/sec=3425.49, time=0-00:09:37)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 25.0000 dev Loss: 1.578 (ref_len=9792) (time=0-00:09:47)
+[annot]              dev auxiliary BLEU4: 0.1301809487317949, 0.506813/0.204852/0.122283/0.087509 (BP = 0.713053, ratio=0.75, hyp_len=4110, ref_len=5500)
+             checkpoint took 0-00:00:09
+[annot] Epoch 25.0187: train_loss/word=0.924901 (words=942, words/sec=4741.18, time=0-00:09:47)
+[annot] Epoch 25.5298: train_loss/word=1.043030 (words=24979, words/sec=3509.47, time=0-00:09:54)
+[annot] Epoch 26.0000: train_loss/word=1.038414 (words=47452, words/sec=3162.44, time=0-00:10:01)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 26.0000 dev Loss: 1.596 (ref_len=9792) (time=0-00:10:10)
+[annot]              dev auxiliary BLEU4: 0.11705097558165926, 0.528934/0.209125/0.118582/0.083238 (BP = 0.643929, ratio=0.69, hyp_len=3819, ref_len=5500)
+             checkpoint took 0-00:00:09
+  new learning rate: 0.0005000000237487257
+  restarting trainer and reverting learned weights to best checkpoint..
+[annot] Epoch 26.0137: train_loss/word=0.971532 (words=674, words/sec=2938.03, time=0-00:10:11)
+[annot] Epoch 26.5228: train_loss/word=1.193616 (words=24652, words/sec=3474.18, time=0-00:10:18)
+[annot] Epoch 27.0000: train_loss/word=1.188735 (words=47452, words/sec=3324.29, time=0-00:10:25)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 27.0000 dev Loss: 1.586 (ref_len=9792) (time=0-00:10:34)
+[annot]              dev auxiliary BLEU4: 0.11405514405635545, 0.517587/0.200572/0.113086/0.074926 (BP = 0.662280, ratio=0.71, hyp_len=3895, ref_len=5500)
+             checkpoint took 0-00:00:09
+[annot] Epoch 27.0172: train_loss/word=1.001821 (words=733, words/sec=3356.85, time=0-00:10:34)
+[annot] Epoch 27.5334: train_loss/word=1.086927 (words=26411, words/sec=3404.32, time=0-00:10:42)
+[annot] Epoch 28.0000: train_loss/word=1.083900 (words=47452, words/sec=3528.57, time=0-00:10:48)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 28.0000 dev Loss: 1.574 (ref_len=9792) (time=0-00:10:57)
+[annot]              dev auxiliary BLEU4: 0.11291646032837965, 0.540245/0.210621/0.119919/0.076803 (BP = 0.627580, ratio=0.68, hyp_len=3752, ref_len=5500)
+             checkpoint took 0-00:00:09
+[annot] Epoch 28.0106: train_loss/word=0.799805 (words=580, words/sec=2508.86, time=0-00:10:57)
+[annot] Epoch 28.5187: train_loss/word=1.008375 (words=24176, words/sec=3543.12, time=0-00:11:04)
+[annot] Epoch 29.0000: train_loss/word=1.021256 (words=47452, words/sec=3356.23, time=0-00:11:11)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 29.0000 dev Loss: 1.569 (ref_len=9792) (time=0-00:11:20)
+[annot]              dev auxiliary BLEU4: 0.12308772272641523, 0.521825/0.207324/0.116646/0.078037 (BP = 0.694831, ratio=0.73, hyp_len=4032, ref_len=5500)
+             checkpoint took 0-00:00:09
+  new learning rate: 0.0002500000118743628
+  restarting trainer and reverting learned weights to best checkpoint..
+[annot] Epoch 29.0081: train_loss/word=0.766943 (words=466, words/sec=1954.12, time=0-00:11:21)
+[annot] Epoch 29.5207: train_loss/word=1.109694 (words=24685, words/sec=3434.12, time=0-00:11:28)
+[annot] Epoch 30.0000: train_loss/word=1.117412 (words=47452, words/sec=3498.65, time=0-00:11:34)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 30.0000 dev Loss: 1.588 (ref_len=9792) (time=0-00:11:44)
+[annot]              dev auxiliary BLEU4: 0.12662243012277874, 0.520000/0.206575/0.120000/0.083509 (BP = 0.699056, ratio=0.74, hyp_len=4050, ref_len=5500)
+             checkpoint took 0-00:00:09
+[annot] Epoch 30.0182: train_loss/word=1.061667 (words=900, words/sec=4114.52, time=0-00:11:44)
+[annot] Epoch 30.5313: train_loss/word=1.062421 (words=25371, words/sec=3284.67, time=0-00:11:52)
+[annot] Epoch 31.0000: train_loss/word=1.051293 (words=47452, words/sec=3423.86, time=0-00:11:58)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 31.0000 dev Loss: 1.575 (ref_len=9792) (time=0-00:12:07)
+[annot]              dev auxiliary BLEU4: 0.1262110078092839, 0.526249/0.212250/0.127585/0.086402 (BP = 0.673763, ratio=0.72, hyp_len=3943, ref_len=5500)
+             checkpoint took 0-00:00:09
+[annot] Epoch 31.0147: train_loss/word=1.145118 (words=715, words/sec=4565.84, time=0-00:12:08)
+[annot] Epoch 31.5248: train_loss/word=1.002619 (words=24089, words/sec=3363.84, time=0-00:12:14)
+[annot] Epoch 32.0000: train_loss/word=1.019134 (words=47452, words/sec=3292.95, time=0-00:12:22)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 32.0000 dev Loss: 1.584 (ref_len=9792) (time=0-00:12:31)
+[annot]              dev auxiliary BLEU4: 0.13218531136729925, 0.522936/0.212453/0.121484/0.083956 (BP = 0.720463, ratio=0.75, hyp_len=4142, ref_len=5500)
+             checkpoint took 0-00:00:09
+  new learning rate: 0.0001250000059371814
+  restarting trainer and reverting learned weights to best checkpoint..
+[annot] Epoch 32.0101: train_loss/word=1.020959 (words=461, words/sec=2043.31, time=0-00:12:32)
+[annot] Epoch 32.5324: train_loss/word=1.106960 (words=26605, words/sec=3369.92, time=0-00:12:39)
+[annot] Epoch 33.0000: train_loss/word=1.080082 (words=47452, words/sec=3501.57, time=0-00:12:45)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 33.0000 dev Loss: 1.574 (ref_len=9792) (time=0-00:12:54)
+[annot]              dev auxiliary BLEU4: 0.12390804293245247, 0.538462/0.214787/0.128392/0.091915 (BP = 0.644657, ratio=0.69, hyp_len=3822, ref_len=5500)
+             checkpoint took 0-00:00:08
+[annot] Epoch 33.0116: train_loss/word=1.212294 (words=527, words/sec=2227.27, time=0-00:12:54)
+[annot] Epoch 33.5238: train_loss/word=1.051760 (words=25246, words/sec=3441.56, time=0-00:13:02)
+[annot] Epoch 34.0000: train_loss/word=1.041049 (words=47452, words/sec=3353.65, time=0-00:13:08)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 34.0000 dev Loss: 1.573 (ref_len=9792) (time=0-00:13:17)
+[annot]              dev auxiliary BLEU4: 0.1235015652972298, 0.548963/0.216779/0.127617/0.090456 (BP = 0.641498, ratio=0.69, hyp_len=3809, ref_len=5500)
+             checkpoint took 0-00:00:08
+[annot] Epoch 34.0222: train_loss/word=0.963350 (words=748, words/sec=3482.72, time=0-00:13:17)
+[annot] Epoch 34.5283: train_loss/word=1.035644 (words=25167, words/sec=3358.77, time=0-00:13:25)
+[annot] Epoch 35.0000: train_loss/word=1.022168 (words=47452, words/sec=3346.32, time=0-00:13:31)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 35.0000 dev Loss: 1.577 (ref_len=9792) (time=0-00:13:40)
+[annot]              dev auxiliary BLEU4: 0.12467782122228954, 0.537275/0.213754/0.125566/0.087732 (BP = 0.661079, ratio=0.71, hyp_len=3890, ref_len=5500)
+             checkpoint took 0-00:00:09
+  Early stopping
+reverting learned weights to best checkpoint..
+> Performing final evaluation
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-test.tmspm4000.intent
+/apps/pkg/anaconda3-5.0.1/rhel7_u2-x86_64/cuda/lib/python3.6/site-packages/h5py/__init__.py:34: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+bleu:13.51
+exact:0.40
+Thursday 14 2019 04:51:59 AM
+Date: Thursday 14 2019 04:51:59 AM
+Done!
+Date: Thursday 14 2019 04:51:59 AM
+Running annot\n
+[dynet] random seed: 1416462042
+[dynet] allocating memory: 512MB
+[dynet] memory allocation done.
+Setting ant
+> Preprocessing
+> Training
+Starting to read /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-trainnodev.tmspm4000.intent and /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-trainnodev.tmspm4000.snippet
+Done reading /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-trainnodev.tmspm4000.intent and /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-trainnodev.tmspm4000.snippet. Packing into batches.
+Done packing batches.
+The dy.parameter(...) call is now DEPRECATED.
+        There is no longer need to explicitly add parameters to the computation graph.
+        Any used parameter will be added automatically.
+[annot] Epoch 0.5187: train_loss/word=5.813786 (words=24291, words/sec=3450.51, time=0-00:00:07)
+[annot] Epoch 1.0000: train_loss/word=5.685391 (words=47452, words/sec=3417.36, time=0-00:00:13)
+> Checkpoint [annot]
+Starting to read /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent and /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.snippet
+Done reading /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent and /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.snippet. Packing into batches.
+Done packing batches.
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 1.0000 dev Loss: 5.268 (ref_len=9792) (time=0-00:00:50)
+[annot]              dev auxiliary BLEU4: 0
+             checkpoint took 0-00:00:36
+  best dev score, writing out model
+[annot] Epoch 1.0228: train_loss/word=5.378612 (words=819, words/sec=3720.16, time=0-00:00:51)
+[annot] Epoch 1.5394: train_loss/word=4.843923 (words=26166, words/sec=3448.49, time=0-00:00:58)
+[annot] Epoch 2.0000: train_loss/word=4.624212 (words=47452, words/sec=3410.31, time=0-00:01:04)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 2.0000 dev Loss: 4.193 (ref_len=9792) (time=0-00:01:41)
+[annot]              dev auxiliary BLEU4: 0
+             checkpoint took 0-00:00:36
+  best dev score, writing out model
+[annot] Epoch 2.0106: train_loss/word=4.348950 (words=552, words/sec=2460.68, time=0-00:01:41)
+[annot] Epoch 2.5192: train_loss/word=4.128666 (words=25533, words/sec=3293.54, time=0-00:01:49)
+[annot] Epoch 3.0000: train_loss/word=4.097196 (words=47452, words/sec=3449.24, time=0-00:01:55)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 3.0000 dev Loss: 4.018 (ref_len=9792) (time=0-00:02:32)
+[annot]              dev auxiliary BLEU4: 0.0, 0.020907/0.003591/0.000497/0.000000 (BP = 1.000000, ratio=1.13, hyp_len=6218, ref_len=5500)
+             checkpoint took 0-00:00:36
+  best dev score, writing out model
+[annot] Epoch 3.0167: train_loss/word=4.014920 (words=885, words/sec=3771.19, time=0-00:02:33)
+[annot] Epoch 3.5344: train_loss/word=4.027140 (words=25577, words/sec=3431.49, time=0-00:02:40)
+[annot] Epoch 4.0000: train_loss/word=4.011757 (words=47452, words/sec=3258.55, time=0-00:02:47)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 4.0000 dev Loss: 3.973 (ref_len=9792) (time=0-00:03:20)
+[annot]              dev auxiliary BLEU4: 0.0, 0.036852/0.007130/0.000955/0.000000 (BP = 1.000000, ratio=1.20, hyp_len=6621, ref_len=5500)
+             checkpoint took 0-00:00:33
+  best dev score, writing out model
+[annot] Epoch 4.0101: train_loss/word=4.318983 (words=422, words/sec=1857.51, time=0-00:03:20)
+[annot] Epoch 4.5157: train_loss/word=3.983070 (words=24905, words/sec=3480.16, time=0-00:03:27)
+[annot] Epoch 5.0000: train_loss/word=3.965798 (words=47452, words/sec=3283.87, time=0-00:03:34)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 5.0000 dev Loss: 3.933 (ref_len=9792) (time=0-00:03:59)
+[annot]              dev auxiliary BLEU4: 0.0017145672975009284, 0.263844/0.064996/0.011776/0.001314 (BP = 0.075542, ratio=0.28, hyp_len=1535, ref_len=5500)
+             checkpoint took 0-00:00:24
+  best dev score, writing out model
+[annot] Epoch 5.0142: train_loss/word=3.928330 (words=837, words/sec=3293.09, time=0-00:03:59)
+[annot] Epoch 5.5293: train_loss/word=3.932440 (words=24850, words/sec=3314.58, time=0-00:04:07)
+[annot] Epoch 6.0000: train_loss/word=3.915663 (words=47452, words/sec=3378.21, time=0-00:04:13)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 6.0000 dev Loss: 3.876 (ref_len=9792) (time=0-00:04:49)
+[annot]              dev auxiliary BLEU4: 0.0, 0.291339/0.028571/0.000000/0.000000 (BP = 0.000000, ratio=0.02, hyp_len=127, ref_len=5500)
+             checkpoint took 0-00:00:35
+  best dev score, writing out model
+[annot] Epoch 6.0071: train_loss/word=3.951552 (words=335, words/sec=2865.27, time=0-00:04:50)
+[annot] Epoch 6.5167: train_loss/word=3.859488 (words=24985, words/sec=3431.27, time=0-00:04:57)
+[annot] Epoch 7.0000: train_loss/word=3.844924 (words=47452, words/sec=3267.97, time=0-00:05:04)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 7.0000 dev Loss: 3.797 (ref_len=9792) (time=0-00:05:38)
+[annot]              dev auxiliary BLEU4: 0.002096768807756548, 0.076447/0.003406/0.000595/0.000125 (BP = 1.000000, ratio=1.67, hyp_len=9209, ref_len=5500)
+             checkpoint took 0-00:00:34
+  best dev score, writing out model
+[annot] Epoch 7.0167: train_loss/word=3.950961 (words=738, words/sec=3373.12, time=0-00:05:39)
+[annot] Epoch 7.5354: train_loss/word=3.787600 (words=24925, words/sec=3445.25, time=0-00:05:46)
+[annot] Epoch 8.0000: train_loss/word=3.751995 (words=47452, words/sec=3303.64, time=0-00:05:53)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 8.0000 dev Loss: 3.696 (ref_len=9792) (time=0-00:06:10)
+[annot]              dev auxiliary BLEU4: 0.01303425972097213, 0.181025/0.025375/0.006426/0.000978 (BP = 1.000000, ratio=1.33, hyp_len=7336, ref_len=5500)
+             checkpoint took 0-00:00:16
+  best dev score, writing out model
+[annot] Epoch 8.0177: train_loss/word=3.624061 (words=877, words/sec=4647.40, time=0-00:06:10)
+[annot] Epoch 8.5415: train_loss/word=3.665801 (words=25797, words/sec=3294.79, time=0-00:06:18)
+[annot] Epoch 9.0000: train_loss/word=3.641999 (words=47452, words/sec=3472.93, time=0-00:06:24)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 9.0000 dev Loss: 3.584 (ref_len=9792) (time=0-00:06:38)
+[annot]              dev auxiliary BLEU4: 0.016564606364266515, 0.226208/0.031358/0.008409/0.001262 (BP = 1.000000, ratio=1.23, hyp_len=6746, ref_len=5500)
+             checkpoint took 0-00:00:14
+  best dev score, writing out model
+[annot] Epoch 9.0177: train_loss/word=3.488040 (words=1013, words/sec=4190.49, time=0-00:06:39)
+[annot] Epoch 9.5354: train_loss/word=3.543948 (words=26017, words/sec=3417.47, time=0-00:06:46)
+[annot] Epoch 10.0000: train_loss/word=3.526299 (words=47452, words/sec=3368.59, time=0-00:06:53)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 10.0000 dev Loss: 3.471 (ref_len=9792) (time=0-00:07:01)
+[annot]              dev auxiliary BLEU4: 0.021092256688610016, 0.378066/0.055469/0.015698/0.001974 (BP = 0.742918, ratio=0.77, hyp_len=4240, ref_len=5500)
+             checkpoint took 0-00:00:08
+  best dev score, writing out model
+[annot] Epoch 10.0222: train_loss/word=3.575752 (words=793, words/sec=4498.43, time=0-00:07:02)
+[annot] Epoch 10.5389: train_loss/word=3.448863 (words=24511, words/sec=3382.43, time=0-00:07:09)
+[annot] Epoch 11.0000: train_loss/word=3.420699 (words=47452, words/sec=3438.66, time=0-00:07:16)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 11.0000 dev Loss: 3.372 (ref_len=9792) (time=0-00:07:28)
+[annot]              dev auxiliary BLEU4: 0.018743201320507833, 0.309037/0.043938/0.012161/0.001410 (BP = 0.853315, ratio=0.86, hyp_len=4747, ref_len=5500)
+             checkpoint took 0-00:00:12
+  best dev score, writing out model
+[annot] Epoch 11.0162: train_loss/word=3.215507 (words=870, words/sec=3652.76, time=0-00:07:29)
+[annot] Epoch 11.5319: train_loss/word=3.336517 (words=24942, words/sec=3261.21, time=0-00:07:36)
+[annot] Epoch 12.0000: train_loss/word=3.318824 (words=47452, words/sec=3437.60, time=0-00:07:43)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 12.0000 dev Loss: 3.274 (ref_len=9792) (time=0-00:08:09)
+[annot]              dev auxiliary BLEU4: 0.00887754215489194, 0.126227/0.015392/0.004657/0.000686 (BP = 1.000000, ratio=1.28, hyp_len=7027, ref_len=5500)
+             checkpoint took 0-00:00:26
+  best dev score, writing out model
+[annot] Epoch 12.0167: train_loss/word=3.240077 (words=574, words/sec=3279.88, time=0-00:08:10)
+[annot] Epoch 12.5369: train_loss/word=3.227985 (words=25333, words/sec=3467.50, time=0-00:08:17)
+[annot] Epoch 13.0000: train_loss/word=3.220775 (words=47452, words/sec=3236.31, time=0-00:08:24)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 13.0000 dev Loss: 3.174 (ref_len=9792) (time=0-00:08:50)
+[annot]              dev auxiliary BLEU4: 0.0037585621962752474, 0.070882/0.009541/0.002115/0.000140 (BP = 1.000000, ratio=1.52, hyp_len=8366, ref_len=5500)
+             checkpoint took 0-00:00:26
+  best dev score, writing out model
+[annot] Epoch 13.0157: train_loss/word=3.291538 (words=731, words/sec=3214.32, time=0-00:08:50)
+[annot] Epoch 13.5379: train_loss/word=3.134910 (words=25930, words/sec=3359.89, time=0-00:08:58)
+[annot] Epoch 14.0000: train_loss/word=3.115315 (words=47452, words/sec=3385.29, time=0-00:09:04)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 14.0000 dev Loss: 3.073 (ref_len=9792) (time=0-00:09:37)
+[annot]              dev auxiliary BLEU4: 0.0017915538365326825, 0.038786/0.003546/0.000806/0.000093 (BP = 1.000000, ratio=2.18, hyp_len=11963, ref_len=5500)
+             checkpoint took 0-00:00:32
+  best dev score, writing out model
+[annot] Epoch 14.0101: train_loss/word=3.314699 (words=552, words/sec=2431.02, time=0-00:09:38)
+[annot] Epoch 14.5263: train_loss/word=3.010726 (words=25161, words/sec=3560.63, time=0-00:09:45)
+[annot] Epoch 15.0000: train_loss/word=3.016522 (words=47452, words/sec=3143.64, time=0-00:09:52)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 15.0000 dev Loss: 2.985 (ref_len=9792) (time=0-00:10:19)
+[annot]              dev auxiliary BLEU4: 0.004767866015283513, 0.091242/0.014066/0.001825/0.000221 (BP = 1.000000, ratio=1.04, hyp_len=5732, ref_len=5500)
+             checkpoint took 0-00:00:27
+  best dev score, writing out model
+[annot] Epoch 15.0116: train_loss/word=2.941542 (words=472, words/sec=3703.33, time=0-00:10:19)
+[annot] Epoch 15.5202: train_loss/word=2.929121 (words=23982, words/sec=3460.35, time=0-00:10:26)
+[annot] Epoch 16.0000: train_loss/word=2.933566 (words=47452, words/sec=3378.87, time=0-00:10:33)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 16.0000 dev Loss: 2.910 (ref_len=9792) (time=0-00:10:53)
+[annot]              dev auxiliary BLEU4: 0.009360025586244767, 0.159386/0.026070/0.004008/0.000461 (BP = 1.000000, ratio=1.01, hyp_len=5540, ref_len=5500)
+             checkpoint took 0-00:00:19
+  best dev score, writing out model
+[annot] Epoch 16.0081: train_loss/word=3.052158 (words=557, words/sec=2325.81, time=0-00:10:54)
+[annot] Epoch 16.5263: train_loss/word=2.866021 (words=25015, words/sec=3363.41, time=0-00:11:01)
+[annot] Epoch 17.0000: train_loss/word=2.855504 (words=47452, words/sec=3482.26, time=0-00:11:08)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 17.0000 dev Loss: 2.843 (ref_len=9792) (time=0-00:11:22)
+[annot]              dev auxiliary BLEU4: 0.00780210856212534, 0.254126/0.039508/0.005635/0.000382 (BP = 0.643443, ratio=0.69, hyp_len=3817, ref_len=5500)
+             checkpoint took 0-00:00:14
+  best dev score, writing out model
+[annot] Epoch 17.0172: train_loss/word=2.789005 (words=714, words/sec=3557.13, time=0-00:11:23)
+[annot] Epoch 17.5288: train_loss/word=2.800697 (words=24744, words/sec=3444.12, time=0-00:11:30)
+[annot] Epoch 18.0000: train_loss/word=2.788668 (words=47452, words/sec=3359.47, time=0-00:11:36)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 18.0000 dev Loss: 2.780 (ref_len=9792) (time=0-00:11:45)
+[annot]              dev auxiliary BLEU4: 0.0, 0.396077/0.068414/0.011345/0.000000 (BP = 0.341404, ratio=0.48, hyp_len=2651, ref_len=5500)
+             checkpoint took 0-00:00:09
+  best dev score, writing out model
+[annot] Epoch 18.0202: train_loss/word=2.709377 (words=904, words/sec=3996.07, time=0-00:11:46)
+[annot] Epoch 18.5394: train_loss/word=2.743407 (words=25750, words/sec=3440.49, time=0-00:11:53)
+[annot] Epoch 19.0000: train_loss/word=2.728500 (words=47452, words/sec=3266.91, time=0-00:12:00)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 19.0000 dev Loss: 2.730 (ref_len=9792) (time=0-00:12:10)
+[annot]              dev auxiliary BLEU4: 0.0, 0.375648/0.061251/0.009989/0.000000 (BP = 0.355038, ratio=0.49, hyp_len=2702, ref_len=5500)
+             checkpoint took 0-00:00:10
+  best dev score, writing out model
+[annot] Epoch 19.0202: train_loss/word=2.595163 (words=944, words/sec=4206.73, time=0-00:12:11)
+[annot] Epoch 19.5288: train_loss/word=2.712724 (words=25878, words/sec=3278.40, time=0-00:12:19)
+[annot] Epoch 20.0000: train_loss/word=2.678020 (words=47452, words/sec=3623.64, time=0-00:12:25)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 20.0000 dev Loss: 2.681 (ref_len=9792) (time=0-00:12:33)
+[annot]              dev auxiliary BLEU4: 0.0, 0.403666/0.061460/0.009637/0.000000 (BP = 0.318197, ratio=0.47, hyp_len=2564, ref_len=5500)
+             checkpoint took 0-00:00:08
+  best dev score, writing out model
+[annot] Epoch 20.0152: train_loss/word=2.724872 (words=778, words/sec=3528.52, time=0-00:12:34)
+[annot] Epoch 20.5212: train_loss/word=2.634615 (words=24741, words/sec=3461.12, time=0-00:12:41)
+[annot] Epoch 21.0000: train_loss/word=2.628874 (words=47452, words/sec=3399.44, time=0-00:12:47)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 21.0000 dev Loss: 2.637 (ref_len=9792) (time=0-00:12:54)
+[annot]              dev auxiliary BLEU4: 0.0, 0.446241/0.068326/0.010753/0.000000 (BP = 0.245650, ratio=0.42, hyp_len=2288, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 21.0182: train_loss/word=2.634974 (words=803, words/sec=3709.64, time=0-00:12:55)
+[annot] Epoch 21.5268: train_loss/word=2.598554 (words=24197, words/sec=3294.38, time=0-00:13:02)
+[annot] Epoch 22.0000: train_loss/word=2.584295 (words=47452, words/sec=3431.85, time=0-00:13:09)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 22.0000 dev Loss: 2.596 (ref_len=9792) (time=0-00:13:15)
+[annot]              dev auxiliary BLEU4: 0.0, 0.493810/0.084118/0.016154/0.000000 (BP = 0.198087, ratio=0.38, hyp_len=2100, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 22.0202: train_loss/word=2.538916 (words=785, words/sec=3724.63, time=0-00:13:16)
+[annot] Epoch 22.5349: train_loss/word=2.556661 (words=24349, words/sec=3201.60, time=0-00:13:23)
+[annot] Epoch 23.0000: train_loss/word=2.541353 (words=47452, words/sec=3431.75, time=0-00:13:30)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 23.0000 dev Loss: 2.558 (ref_len=9792) (time=0-00:13:36)
+[annot]              dev auxiliary BLEU4: 0.0, 0.509658/0.080914/0.018868/0.000000 (BP = 0.178330, ratio=0.37, hyp_len=2019, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 23.0197: train_loss/word=2.579668 (words=995, words/sec=4461.50, time=0-00:13:37)
+[annot] Epoch 23.5288: train_loss/word=2.495371 (words=24842, words/sec=3737.51, time=0-00:13:43)
+[annot] Epoch 24.0000: train_loss/word=2.502051 (words=47452, words/sec=3234.64, time=0-00:13:50)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 24.0000 dev Loss: 2.522 (ref_len=9792) (time=0-00:13:56)
+[annot]              dev auxiliary BLEU4: 0.0, 0.515889/0.071252/0.014827/0.000000 (BP = 0.177128, ratio=0.37, hyp_len=2014, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 24.0081: train_loss/word=2.625032 (words=455, words/sec=1901.35, time=0-00:13:57)
+[annot] Epoch 24.5278: train_loss/word=2.448232 (words=25303, words/sec=3395.12, time=0-00:14:05)
+[annot] Epoch 25.0000: train_loss/word=2.464051 (words=47452, words/sec=3421.23, time=0-00:14:11)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 25.0000 dev Loss: 2.486 (ref_len=9792) (time=0-00:14:17)
+[annot]              dev auxiliary BLEU4: 0.0, 0.511397/0.060569/0.013957/0.000000 (BP = 0.178089, ratio=0.37, hyp_len=2018, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 25.0187: train_loss/word=2.650137 (words=942, words/sec=4727.45, time=0-00:14:18)
+[annot] Epoch 25.5298: train_loss/word=2.447364 (words=24979, words/sec=3508.37, time=0-00:14:25)
+[annot] Epoch 26.0000: train_loss/word=2.429382 (words=47452, words/sec=3163.52, time=0-00:14:32)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 26.0000 dev Loss: 2.456 (ref_len=9792) (time=0-00:14:38)
+[annot]              dev auxiliary BLEU4: 0.0, 0.525332/0.070423/0.018654/0.000000 (BP = 0.181707, ratio=0.37, hyp_len=2033, ref_len=5500)
+             checkpoint took 0-00:00:05
+  best dev score, writing out model
+[annot] Epoch 26.0137: train_loss/word=2.417502 (words=674, words/sec=2940.99, time=0-00:14:39)
+[annot] Epoch 26.5228: train_loss/word=2.372790 (words=24652, words/sec=3471.03, time=0-00:14:45)
+[annot] Epoch 27.0000: train_loss/word=2.396355 (words=47452, words/sec=3322.32, time=0-00:14:52)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 27.0000 dev Loss: 2.425 (ref_len=9792) (time=0-00:14:58)
+[annot]              dev auxiliary BLEU4: 0.0, 0.519839/0.059082/0.016793/0.000000 (BP = 0.171627, ratio=0.36, hyp_len=1991, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 27.0172: train_loss/word=2.314100 (words=733, words/sec=3338.19, time=0-00:14:59)
+[annot] Epoch 27.5334: train_loss/word=2.357271 (words=26411, words/sec=3401.64, time=0-00:15:07)
+[annot] Epoch 28.0000: train_loss/word=2.365692 (words=47452, words/sec=3524.62, time=0-00:15:13)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 28.0000 dev Loss: 2.403 (ref_len=9792) (time=0-00:15:19)
+[annot]              dev auxiliary BLEU4: 0.0, 0.526370/0.057952/0.013010/0.000000 (BP = 0.162646, ratio=0.36, hyp_len=1953, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 28.0106: train_loss/word=2.422785 (words=580, words/sec=2506.93, time=0-00:15:20)
+[annot] Epoch 28.5187: train_loss/word=2.336188 (words=24176, words/sec=3537.06, time=0-00:15:26)
+[annot] Epoch 29.0000: train_loss/word=2.336497 (words=47452, words/sec=3352.96, time=0-00:15:33)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 29.0000 dev Loss: 2.372 (ref_len=9792) (time=0-00:15:39)
+[annot]              dev auxiliary BLEU4: 0.0, 0.518519/0.055069/0.013356/0.000000 (BP = 0.173296, ratio=0.36, hyp_len=1998, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 29.0081: train_loss/word=2.283511 (words=466, words/sec=1951.67, time=0-00:15:40)
+[annot] Epoch 29.5207: train_loss/word=2.322338 (words=24685, words/sec=3431.01, time=0-00:15:47)
+[annot] Epoch 30.0000: train_loss/word=2.310261 (words=47452, words/sec=3493.32, time=0-00:15:54)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 30.0000 dev Loss: 2.351 (ref_len=9792) (time=0-00:16:00)
+[annot]              dev auxiliary BLEU4: 0.0, 0.520101/0.056604/0.015966/0.000000 (BP = 0.171389, ratio=0.36, hyp_len=1990, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 30.0182: train_loss/word=2.220983 (words=900, words/sec=4109.73, time=0-00:16:00)
+[annot] Epoch 30.5313: train_loss/word=2.309981 (words=25371, words/sec=3277.79, time=0-00:16:08)
+[annot] Epoch 31.0000: train_loss/word=2.284737 (words=47452, words/sec=3417.09, time=0-00:16:14)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 31.0000 dev Loss: 2.329 (ref_len=9792) (time=0-00:16:21)
+[annot]              dev auxiliary BLEU4: 0.0, 0.516176/0.056707/0.016935/0.000000 (BP = 0.183401, ratio=0.37, hyp_len=2040, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 31.0147: train_loss/word=2.327692 (words=715, words/sec=4546.84, time=0-00:16:21)
+[annot] Epoch 31.5248: train_loss/word=2.285254 (words=24089, words/sec=3353.85, time=0-00:16:28)
+[annot] Epoch 32.0000: train_loss/word=2.259459 (words=47452, words/sec=3287.12, time=0-00:16:35)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 32.0000 dev Loss: 2.305 (ref_len=9792) (time=0-00:16:42)
+[annot]              dev auxiliary BLEU4: 0.0, 0.518685/0.056627/0.015742/0.000000 (BP = 0.175449, ratio=0.36, hyp_len=2007, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 32.0101: train_loss/word=2.448061 (words=461, words/sec=2034.50, time=0-00:16:42)
+[annot] Epoch 32.5324: train_loss/word=2.252206 (words=26605, words/sec=3365.05, time=0-00:16:50)
+[annot] Epoch 33.0000: train_loss/word=2.233957 (words=47452, words/sec=3496.72, time=0-00:16:56)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 33.0000 dev Loss: 2.282 (ref_len=9792) (time=0-00:17:02)
+[annot]              dev auxiliary BLEU4: 0.0, 0.515549/0.058504/0.019078/0.000000 (BP = 0.187777, ratio=0.37, hyp_len=2058, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 33.0116: train_loss/word=2.465741 (words=527, words/sec=2215.18, time=0-00:17:03)
+[annot] Epoch 33.5238: train_loss/word=2.226780 (words=25246, words/sec=3433.51, time=0-00:17:10)
+[annot] Epoch 34.0000: train_loss/word=2.210479 (words=47452, words/sec=3345.61, time=0-00:17:17)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 34.0000 dev Loss: 2.264 (ref_len=9792) (time=0-00:17:23)
+[annot]              dev auxiliary BLEU4: 0.0, 0.523903/0.062615/0.017901/0.000000 (BP = 0.180740, ratio=0.37, hyp_len=2029, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 34.0222: train_loss/word=2.209443 (words=748, words/sec=3470.08, time=0-00:17:24)
+[annot] Epoch 34.5283: train_loss/word=2.197819 (words=25167, words/sec=3350.32, time=0-00:17:31)
+[annot] Epoch 35.0000: train_loss/word=2.189679 (words=47452, words/sec=3338.32, time=0-00:17:38)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 35.0000 dev Loss: 2.249 (ref_len=9792) (time=0-00:17:44)
+[annot]              dev auxiliary BLEU4: 0.0, 0.520534/0.059223/0.018018/0.000000 (BP = 0.178811, ratio=0.37, hyp_len=2021, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 35.0116: train_loss/word=2.357934 (words=505, words/sec=2186.96, time=0-00:17:44)
+[annot] Epoch 35.5278: train_loss/word=2.166707 (words=24419, words/sec=3388.62, time=0-00:17:52)
+[annot] Epoch 36.0000: train_loss/word=2.168321 (words=47452, words/sec=3267.28, time=0-00:17:59)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 36.0000 dev Loss: 2.227 (ref_len=9792) (time=0-00:18:05)
+[annot]              dev auxiliary BLEU4: 0.0, 0.515896/0.059666/0.018025/0.000000 (BP = 0.192179, ratio=0.38, hyp_len=2076, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 36.0202: train_loss/word=2.079758 (words=824, words/sec=3901.61, time=0-00:18:06)
+[annot] Epoch 36.5364: train_loss/word=2.165796 (words=25759, words/sec=3280.07, time=0-00:18:13)
+[annot] Epoch 37.0000: train_loss/word=2.147125 (words=47452, words/sec=3389.11, time=0-00:18:20)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 37.0000 dev Loss: 2.210 (ref_len=9792) (time=0-00:18:26)
+[annot]              dev auxiliary BLEU4: 0.0, 0.531045/0.063884/0.016088/0.000000 (BP = 0.169250, ratio=0.36, hyp_len=1981, ref_len=5500)
+             checkpoint took 0-00:00:05
+  best dev score, writing out model
+[annot] Epoch 37.0142: train_loss/word=2.213112 (words=752, words/sec=3285.99, time=0-00:18:26)
+[annot] Epoch 37.5253: train_loss/word=2.157167 (words=25153, words/sec=3231.70, time=0-00:18:34)
+[annot] Epoch 38.0000: train_loss/word=2.127107 (words=47452, words/sec=3436.18, time=0-00:18:40)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 38.0000 dev Loss: 2.193 (ref_len=9792) (time=0-00:18:47)
+[annot]              dev auxiliary BLEU4: 0.0, 0.519487/0.058390/0.017115/0.000000 (BP = 0.180257, ratio=0.37, hyp_len=2027, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 38.0172: train_loss/word=2.167764 (words=678, words/sec=3031.56, time=0-00:18:47)
+[annot] Epoch 38.5273: train_loss/word=2.123476 (words=25632, words/sec=3370.09, time=0-00:18:55)
+[annot] Epoch 39.0000: train_loss/word=2.107151 (words=47452, words/sec=3419.56, time=0-00:19:01)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 39.0000 dev Loss: 2.174 (ref_len=9792) (time=0-00:19:07)
+[annot]              dev auxiliary BLEU4: 0.0, 0.515708/0.064709/0.018125/0.000000 (BP = 0.190465, ratio=0.38, hyp_len=2069, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 39.0147: train_loss/word=2.033951 (words=585, words/sec=2685.24, time=0-00:19:08)
+[annot] Epoch 39.5349: train_loss/word=2.112156 (words=24279, words/sec=3317.98, time=0-00:19:15)
+[annot] Epoch 40.0000: train_loss/word=2.087697 (words=47452, words/sec=3411.47, time=0-00:19:22)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 40.0000 dev Loss: 2.158 (ref_len=9792) (time=0-00:19:28)
+[annot]              dev auxiliary BLEU4: 0.0, 0.525622/0.069133/0.018415/0.000000 (BP = 0.185586, ratio=0.37, hyp_len=2049, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 40.0238: train_loss/word=1.979088 (words=823, words/sec=3866.19, time=0-00:19:29)
+[annot] Epoch 40.5410: train_loss/word=2.075315 (words=25075, words/sec=3678.74, time=0-00:19:36)
+[annot] Epoch 41.0000: train_loss/word=2.070337 (words=47452, words/sec=3262.22, time=0-00:19:42)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 41.0000 dev Loss: 2.147 (ref_len=9792) (time=0-00:19:49)
+[annot]              dev auxiliary BLEU4: 0.0, 0.522461/0.070388/0.020032/0.000000 (BP = 0.185343, ratio=0.37, hyp_len=2048, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 41.0137: train_loss/word=1.961734 (words=724, words/sec=3131.85, time=0-00:19:49)
+[annot] Epoch 41.5303: train_loss/word=2.073443 (words=24781, words/sec=3253.01, time=0-00:19:57)
+[annot] Epoch 42.0000: train_loss/word=2.053015 (words=47452, words/sec=3447.97, time=0-00:20:03)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 42.0000 dev Loss: 2.132 (ref_len=9792) (time=0-00:20:10)
+[annot]              dev auxiliary BLEU4: 0.0, 0.522949/0.072816/0.019231/0.000000 (BP = 0.185343, ratio=0.37, hyp_len=2048, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 42.0202: train_loss/word=1.950503 (words=866, words/sec=4110.08, time=0-00:20:10)
+[annot] Epoch 42.5344: train_loss/word=2.041745 (words=25736, words/sec=3480.80, time=0-00:20:18)
+[annot] Epoch 43.0000: train_loss/word=2.036395 (words=47452, words/sec=3262.03, time=0-00:20:24)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 43.0000 dev Loss: 2.122 (ref_len=9792) (time=0-00:20:31)
+[annot]              dev auxiliary BLEU4: 0.0, 0.509786/0.072165/0.017088/0.000000 (BP = 0.209526, ratio=0.39, hyp_len=2146, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 43.0197: train_loss/word=1.921816 (words=905, words/sec=4049.20, time=0-00:20:31)
+[annot] Epoch 43.5379: train_loss/word=2.021618 (words=26239, words/sec=3303.35, time=0-00:20:39)
+[annot] Epoch 44.0000: train_loss/word=2.018550 (words=47452, words/sec=3287.41, time=0-00:20:46)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 44.0000 dev Loss: 2.106 (ref_len=9792) (time=0-00:20:52)
+[annot]              dev auxiliary BLEU4: 0.0, 0.520893/0.073271/0.019142/0.000000 (BP = 0.199571, ratio=0.38, hyp_len=2106, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 44.0177: train_loss/word=1.963405 (words=950, words/sec=4015.08, time=0-00:20:53)
+[annot] Epoch 44.5359: train_loss/word=2.010226 (words=25349, words/sec=3415.17, time=0-00:21:00)
+[annot] Epoch 45.0000: train_loss/word=2.002676 (words=47452, words/sec=3340.06, time=0-00:21:06)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 45.0000 dev Loss: 2.094 (ref_len=9792) (time=0-00:21:13)
+[annot]              dev auxiliary BLEU4: 0.008339010159556596, 0.524510/0.073171/0.023387/0.004762 (BP = 0.183401, ratio=0.37, hyp_len=2040, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 45.0142: train_loss/word=1.980430 (words=803, words/sec=3163.96, time=0-00:21:13)
+[annot] Epoch 45.5329: train_loss/word=1.988844 (words=25434, words/sec=3210.18, time=0-00:21:21)
+[annot] Epoch 46.0000: train_loss/word=1.988386 (words=47452, words/sec=3689.13, time=0-00:21:27)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 46.0000 dev Loss: 2.078 (ref_len=9792) (time=0-00:21:33)
+[annot]              dev auxiliary BLEU4: 0.012977981660780595, 0.522596/0.085119/0.033594/0.013636 (BP = 0.193161, ratio=0.38, hyp_len=2080, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 46.0142: train_loss/word=1.900602 (words=799, words/sec=3246.88, time=0-00:21:34)
+[annot] Epoch 46.5319: train_loss/word=1.993889 (words=24823, words/sec=3275.83, time=0-00:21:41)
+[annot] Epoch 47.0000: train_loss/word=1.974392 (words=47452, words/sec=3469.57, time=0-00:21:48)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 47.0000 dev Loss: 2.070 (ref_len=9792) (time=0-00:21:54)
+[annot]              dev auxiliary BLEU4: 0.008744376770745688, 0.525783/0.078806/0.022745/0.004571 (BP = 0.191934, ratio=0.38, hyp_len=2075, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 47.0182: train_loss/word=1.921676 (words=697, words/sec=4046.50, time=0-00:21:55)
+[annot] Epoch 47.5258: train_loss/word=1.957351 (words=25698, words/sec=3464.45, time=0-00:22:02)
+[annot] Epoch 48.0000: train_loss/word=1.960204 (words=47452, words/sec=3319.03, time=0-00:22:09)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 48.0000 dev Loss: 2.060 (ref_len=9792) (time=0-00:22:15)
+[annot]              dev auxiliary BLEU4: 0.010512307443732266, 0.533760/0.085328/0.026037/0.009650 (BP = 0.180740, ratio=0.37, hyp_len=2029, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 48.0137: train_loss/word=2.006350 (words=568, words/sec=3192.56, time=0-00:22:15)
+[annot] Epoch 48.5212: train_loss/word=1.949834 (words=24102, words/sec=3431.71, time=0-00:22:22)
+[annot] Epoch 49.0000: train_loss/word=1.945501 (words=47452, words/sec=3254.43, time=0-00:22:29)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 49.0000 dev Loss: 2.046 (ref_len=9792) (time=0-00:22:36)
+[annot]              dev auxiliary BLEU4: 0.014298335358523062, 0.525554/0.087216/0.036892/0.018307 (BP = 0.191689, ratio=0.38, hyp_len=2074, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 49.0212: train_loss/word=1.988689 (words=971, words/sec=4383.60, time=0-00:22:36)
+[annot] Epoch 49.5278: train_loss/word=1.926094 (words=25138, words/sec=3399.91, time=0-00:22:44)
+[annot] Epoch 50.0000: train_loss/word=1.931481 (words=47452, words/sec=3270.96, time=0-00:22:50)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 50.0000 dev Loss: 2.034 (ref_len=9792) (time=0-00:22:57)
+[annot]              dev auxiliary BLEU4: 0.01660895246965962, 0.526887/0.100581/0.043182/0.019565 (BP = 0.203043, ratio=0.39, hyp_len=2120, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 50.0142: train_loss/word=1.892130 (words=651, words/sec=2851.34, time=0-00:22:58)
+[annot] Epoch 50.5243: train_loss/word=1.902616 (words=24720, words/sec=3647.30, time=0-00:23:04)
+[annot] Epoch 51.0000: train_loss/word=1.917502 (words=47452, words/sec=3274.18, time=0-00:23:11)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 51.0000 dev Loss: 2.025 (ref_len=9792) (time=0-00:23:17)
+[annot]              dev auxiliary BLEU4: 0.017631841271865897, 0.533458/0.104203/0.044129/0.021345 (BP = 0.207277, ratio=0.39, hyp_len=2137, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 51.0172: train_loss/word=1.907558 (words=900, words/sec=3895.27, time=0-00:23:18)
+[annot] Epoch 51.5384: train_loss/word=1.923055 (words=25764, words/sec=3435.88, time=0-00:23:25)
+[annot] Epoch 52.0000: train_loss/word=1.906473 (words=47452, words/sec=3430.31, time=0-00:23:32)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 52.0000 dev Loss: 2.019 (ref_len=9792) (time=0-00:23:38)
+[annot]              dev auxiliary BLEU4: 0.015761117760497385, 0.514377/0.092686/0.035945/0.015136 (BP = 0.220850, ratio=0.40, hyp_len=2191, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 52.0182: train_loss/word=1.639438 (words=726, words/sec=3351.58, time=0-00:23:39)
+[annot] Epoch 52.5238: train_loss/word=1.886445 (words=25868, words/sec=3417.38, time=0-00:23:46)
+[annot] Epoch 53.0000: train_loss/word=1.893298 (words=47452, words/sec=3431.23, time=0-00:23:53)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 53.0000 dev Loss: 2.006 (ref_len=9792) (time=0-00:23:59)
+[annot]              dev auxiliary BLEU4: 0.022319200651864924, 0.523385/0.111653/0.050519/0.027751 (BP = 0.234596, ratio=0.41, hyp_len=2245, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 53.0172: train_loss/word=1.801644 (words=686, words/sec=4363.83, time=0-00:24:00)
+[annot] Epoch 53.5404: train_loss/word=1.898364 (words=24571, words/sec=3429.92, time=0-00:24:07)
+[annot] Epoch 54.0000: train_loss/word=1.882359 (words=47452, words/sec=3251.06, time=0-00:24:14)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 54.0000 dev Loss: 1.998 (ref_len=9792) (time=0-00:24:20)
+[annot]              dev auxiliary BLEU4: 0.022124234160947553, 0.513678/0.104046/0.047239/0.024479 (BP = 0.249527, ratio=0.42, hyp_len=2303, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 54.0182: train_loss/word=2.088055 (words=653, words/sec=3101.73, time=0-00:24:21)
+[annot] Epoch 54.5288: train_loss/word=1.885983 (words=25045, words/sec=3499.90, time=0-00:24:28)
+[annot] Epoch 55.0000: train_loss/word=1.870357 (words=47452, words/sec=3214.13, time=0-00:24:35)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 55.0000 dev Loss: 1.989 (ref_len=9792) (time=0-00:24:42)
+[annot]              dev auxiliary BLEU4: 0.021476915217209222, 0.525288/0.107335/0.046768/0.025617 (BP = 0.236903, ratio=0.41, hyp_len=2254, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 55.0222: train_loss/word=1.977187 (words=763, words/sec=4538.62, time=0-00:24:42)
+[annot] Epoch 55.5298: train_loss/word=1.847088 (words=25663, words/sec=3365.06, time=0-00:24:50)
+[annot] Epoch 56.0000: train_loss/word=1.858005 (words=47452, words/sec=3420.56, time=0-00:24:56)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 56.0000 dev Loss: 1.979 (ref_len=9792) (time=0-00:25:03)
+[annot]              dev auxiliary BLEU4: 0.02651782207848188, 0.525567/0.121687/0.064182/0.039085 (BP = 0.235621, ratio=0.41, hyp_len=2249, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 56.0142: train_loss/word=1.819046 (words=736, words/sec=3027.51, time=0-00:25:03)
+[annot] Epoch 56.5268: train_loss/word=1.841829 (words=24609, words/sec=3243.68, time=0-00:25:11)
+[annot] Epoch 57.0000: train_loss/word=1.846904 (words=47452, words/sec=3413.70, time=0-00:25:17)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 57.0000 dev Loss: 1.970 (ref_len=9792) (time=0-00:25:24)
+[annot]              dev auxiliary BLEU4: 0.022535723308230893, 0.510327/0.106029/0.045276/0.024911 (BP = 0.254970, ratio=0.42, hyp_len=2324, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 57.0101: train_loss/word=2.142921 (words=723, words/sec=2659.92, time=0-00:25:25)
+[annot] Epoch 57.5329: train_loss/word=1.840125 (words=25205, words/sec=3307.93, time=0-00:25:32)
+[annot] Epoch 58.0000: train_loss/word=1.834761 (words=47452, words/sec=3550.21, time=0-00:25:38)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 58.0000 dev Loss: 1.968 (ref_len=9792) (time=0-00:25:45)
+[annot]              dev auxiliary BLEU4: 0.026129424764054672, 0.531444/0.121636/0.061043/0.036862 (BP = 0.237929, ratio=0.41, hyp_len=2258, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 58.0202: train_loss/word=1.753292 (words=811, words/sec=3849.71, time=0-00:25:45)
+[annot] Epoch 58.5420: train_loss/word=1.835864 (words=25781, words/sec=3326.84, time=0-00:25:53)
+[annot] Epoch 59.0000: train_loss/word=1.824081 (words=47452, words/sec=3454.48, time=0-00:25:59)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 59.0000 dev Loss: 1.957 (ref_len=9792) (time=0-00:26:06)
+[annot]              dev auxiliary BLEU4: 0.025714165574165292, 0.523323/0.113452/0.059269/0.039962 (BP = 0.236133, ratio=0.41, hyp_len=2251, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 59.0233: train_loss/word=1.815288 (words=841, words/sec=3968.47, time=0-00:26:06)
+[annot] Epoch 59.5344: train_loss/word=1.818028 (words=24653, words/sec=3549.05, time=0-00:26:13)
+[annot] Epoch 60.0000: train_loss/word=1.812718 (words=47452, words/sec=3171.55, time=0-00:26:20)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 60.0000 dev Loss: 1.948 (ref_len=9792) (time=0-00:26:27)
+[annot]              dev auxiliary BLEU4: 0.029808790250379906, 0.514935/0.123419/0.059607/0.039932 (BP = 0.268786, ratio=0.43, hyp_len=2377, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+reverting learned weights to best checkpoint..
+> Performing final evaluation
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-test.tmspm4000.intent
+/apps/pkg/anaconda3-5.0.1/rhel7_u2-x86_64/cuda/lib/python3.6/site-packages/h5py/__init__.py:34: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+bleu:3.70
+exact:0.40
+Thursday 14 2019 05:18:36 AM
+Date: Thursday 14 2019 05:18:36 AM
+Done!
+Date: Thursday 14 2019 05:18:36 AM
+Running annot\n
+[dynet] random seed: 3442364247
+[dynet] allocating memory: 512MB
+[dynet] memory allocation done.
+Setting ant
+> Preprocessing
+> Training
+Starting to read /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-trainnodev.tmspm4000.intent and /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-trainnodev.tmspm4000.snippet
+Done reading /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-trainnodev.tmspm4000.intent and /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-trainnodev.tmspm4000.snippet. Packing into batches.
+Done packing batches.
+The dy.parameter(...) call is now DEPRECATED.
+        There is no longer need to explicitly add parameters to the computation graph.
+        Any used parameter will be added automatically.
+[annot] Epoch 0.5187: train_loss/word=3.807172 (words=24291, words/sec=3442.54, time=0-00:00:07)
+[annot] Epoch 1.0000: train_loss/word=3.105259 (words=47452, words/sec=3410.99, time=0-00:00:13)
+> Checkpoint [annot]
+Starting to read /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent and /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.snippet
+Done reading /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent and /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.snippet. Packing into batches.
+Done packing batches.
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 1.0000 dev Loss: 2.106 (ref_len=9792) (time=0-00:00:20)
+[annot]              dev auxiliary BLEU4: 0.018448823006645923, 0.507698/0.116659/0.028986/0.004785 (BP = 0.344611, ratio=0.48, hyp_len=2663, ref_len=5500)
+             checkpoint took 0-00:00:06
+  best dev score, writing out model
+[annot] Epoch 1.0228: train_loss/word=1.916325 (words=819, words/sec=3715.17, time=0-00:00:21)
+[annot] Epoch 1.5394: train_loss/word=1.860956 (words=26166, words/sec=3443.60, time=0-00:00:29)
+[annot] Epoch 2.0000: train_loss/word=1.823091 (words=47452, words/sec=3406.13, time=0-00:00:35)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 2.0000 dev Loss: 1.714 (ref_len=9792) (time=0-00:00:44)
+[annot]              dev auxiliary BLEU4: 0.07916371648243682, 0.446722/0.146438/0.072041/0.039985 (BP = 0.675669, ratio=0.72, hyp_len=3951, ref_len=5500)
+             checkpoint took 0-00:00:08
+  best dev score, writing out model
+[annot] Epoch 2.0106: train_loss/word=1.623295 (words=552, words/sec=2466.88, time=0-00:00:44)
+[annot] Epoch 2.5192: train_loss/word=1.529694 (words=25533, words/sec=3285.22, time=0-00:00:52)
+[annot] Epoch 3.0000: train_loss/word=1.519882 (words=47452, words/sec=3442.16, time=0-00:00:58)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 3.0000 dev Loss: 1.574 (ref_len=9792) (time=0-00:01:09)
+[annot]              dev auxiliary BLEU4: 0.09980835955298242, 0.470358/0.159339/0.079491/0.048804 (BP = 0.764340, ratio=0.79, hyp_len=4335, ref_len=5500)
+             checkpoint took 0-00:00:10
+  best dev score, writing out model
+[annot] Epoch 3.0167: train_loss/word=1.480473 (words=885, words/sec=3651.21, time=0-00:01:09)
+[annot] Epoch 3.5344: train_loss/word=1.340657 (words=25577, words/sec=3425.45, time=0-00:01:17)
+[annot] Epoch 4.0000: train_loss/word=1.326529 (words=47452, words/sec=3250.74, time=0-00:01:23)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 4.0000 dev Loss: 1.545 (ref_len=9792) (time=0-00:01:31)
+[annot]              dev auxiliary BLEU4: 0.0806151532184534, 0.542443/0.195236/0.098024/0.049908 (BP = 0.534332, ratio=0.61, hyp_len=3381, ref_len=5500)
+             checkpoint took 0-00:00:07
+  best dev score, writing out model
+[annot] Epoch 4.0101: train_loss/word=1.037813 (words=422, words/sec=1855.08, time=0-00:01:32)
+[annot] Epoch 4.5157: train_loss/word=1.169854 (words=24905, words/sec=3457.93, time=0-00:01:39)
+[annot] Epoch 5.0000: train_loss/word=1.178169 (words=47452, words/sec=3278.99, time=0-00:01:46)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 5.0000 dev Loss: 1.505 (ref_len=9792) (time=0-00:01:57)
+[annot]              dev auxiliary BLEU4: 0.11967453329814809, 0.520021/0.213096/0.125786/0.085333 (BP = 0.644414, ratio=0.69, hyp_len=3821, ref_len=5500)
+             checkpoint took 0-00:00:10
+  best dev score, writing out model
+[annot] Epoch 5.0142: train_loss/word=1.107038 (words=837, words/sec=3288.37, time=0-00:01:58)
+[annot] Epoch 5.5293: train_loss/word=1.011526 (words=24850, words/sec=3307.97, time=0-00:02:05)
+[annot] Epoch 6.0000: train_loss/word=1.045166 (words=47452, words/sec=3373.72, time=0-00:02:12)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 6.0000 dev Loss: 1.496 (ref_len=9792) (time=0-00:02:21)
+[annot]              dev auxiliary BLEU4: 0.13660488611805938, 0.509629/0.210472/0.124060/0.084042 (BP = 0.747003, ratio=0.77, hyp_len=4258, ref_len=5500)
+             checkpoint took 0-00:00:09
+  best dev score, writing out model
+[annot] Epoch 6.0071: train_loss/word=0.976791 (words=335, words/sec=2863.51, time=0-00:02:22)
+[annot] Epoch 6.5167: train_loss/word=0.914155 (words=24985, words/sec=3425.48, time=0-00:02:29)
+[annot] Epoch 7.0000: train_loss/word=0.932587 (words=47452, words/sec=3261.31, time=0-00:02:36)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 7.0000 dev Loss: 1.530 (ref_len=9792) (time=0-00:02:47)
+[annot]              dev auxiliary BLEU4: 0.14126362666246806, 0.531792/0.225213/0.131265/0.092818 (BP = 0.722771, ratio=0.75, hyp_len=4152, ref_len=5500)
+             checkpoint took 0-00:00:10
+[annot] Epoch 7.0167: train_loss/word=0.671915 (words=738, words/sec=3369.29, time=0-00:02:47)
+[annot] Epoch 7.5354: train_loss/word=0.781508 (words=24925, words/sec=3435.02, time=0-00:02:54)
+[annot] Epoch 8.0000: train_loss/word=0.831621 (words=47452, words/sec=3295.82, time=0-00:03:01)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 8.0000 dev Loss: 1.545 (ref_len=9792) (time=0-00:03:12)
+[annot]              dev auxiliary BLEU4: 0.14432380221690616, 0.467623/0.187277/0.109804/0.075000 (BP = 0.880690, ratio=0.89, hyp_len=4880, ref_len=5500)
+             checkpoint took 0-00:00:11
+[annot] Epoch 8.0177: train_loss/word=0.669455 (words=877, words/sec=4643.80, time=0-00:03:13)
+[annot] Epoch 8.5415: train_loss/word=0.705286 (words=25797, words/sec=3287.75, time=0-00:03:20)
+[annot] Epoch 9.0000: train_loss/word=0.741134 (words=47452, words/sec=3464.05, time=0-00:03:26)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 9.0000 dev Loss: 1.620 (ref_len=9792) (time=0-00:03:38)
+[annot]              dev auxiliary BLEU4: 0.14377066774048614, 0.505412/0.210322/0.119667/0.079351 (BP = 0.806596, ratio=0.82, hyp_len=4527, ref_len=5500)
+             checkpoint took 0-00:00:11
+  new learning rate: 0.004999999888241291
+  restarting trainer and reverting learned weights to best checkpoint..
+[annot] Epoch 9.0177: train_loss/word=0.971119 (words=1013, words/sec=4185.12, time=0-00:03:38)
+[annot] Epoch 9.5354: train_loss/word=1.224477 (words=26017, words/sec=3408.55, time=0-00:03:46)
+[annot] Epoch 10.0000: train_loss/word=1.205167 (words=47452, words/sec=3360.03, time=0-00:03:52)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 10.0000 dev Loss: 1.594 (ref_len=9792) (time=0-00:04:01)
+[annot]              dev auxiliary BLEU4: 0.11175882949991574, 0.552307/0.213642/0.117145/0.075554 (BP = 0.621685, ratio=0.68, hyp_len=3728, ref_len=5500)
+             checkpoint took 0-00:00:09
+[annot] Epoch 10.0222: train_loss/word=0.809140 (words=793, words/sec=4496.77, time=0-00:04:02)
+[annot] Epoch 10.5389: train_loss/word=0.902991 (words=24511, words/sec=3374.24, time=0-00:04:09)
+[annot] Epoch 11.0000: train_loss/word=0.922010 (words=47452, words/sec=3431.45, time=0-00:04:15)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 11.0000 dev Loss: 1.548 (ref_len=9792) (time=0-00:04:26)
+[annot]              dev auxiliary BLEU4: 0.13305054391445406, 0.520114/0.218244/0.120257/0.076669 (BP = 0.739732, ratio=0.77, hyp_len=4226, ref_len=5500)
+             checkpoint took 0-00:00:10
+[annot] Epoch 11.0162: train_loss/word=0.761968 (words=870, words/sec=3658.48, time=0-00:04:26)
+[annot] Epoch 11.5319: train_loss/word=0.697714 (words=24942, words/sec=3253.06, time=0-00:04:33)
+[annot] Epoch 12.0000: train_loss/word=0.734562 (words=47452, words/sec=3429.90, time=0-00:04:40)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 12.0000 dev Loss: 1.571 (ref_len=9792) (time=0-00:04:51)
+[annot]              dev auxiliary BLEU4: 0.15588624008612437, 0.506805/0.219437/0.127971/0.088072 (BP = 0.828481, ratio=0.84, hyp_len=4629, ref_len=5500)
+             checkpoint took 0-00:00:10
+  new learning rate: 0.0024999999441206455
+  restarting trainer and reverting learned weights to best checkpoint..
+[annot] Epoch 12.0167: train_loss/word=0.824349 (words=574, words/sec=3276.71, time=0-00:04:51)
+[annot] Epoch 12.5369: train_loss/word=1.014411 (words=25333, words/sec=3466.55, time=0-00:04:58)
+[annot] Epoch 13.0000: train_loss/word=0.977872 (words=47452, words/sec=3230.11, time=0-00:05:05)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 13.0000 dev Loss: 1.513 (ref_len=9792) (time=0-00:05:17)
+[annot]              dev auxiliary BLEU4: 0.13122617019945734, 0.495242/0.208769/0.112618/0.068139 (BP = 0.781895, ratio=0.80, hyp_len=4414, ref_len=5500)
+             checkpoint took 0-00:00:11
+[annot] Epoch 13.0157: train_loss/word=0.717751 (words=731, words/sec=3221.95, time=0-00:05:17)
+[annot] Epoch 13.5379: train_loss/word=0.719378 (words=25930, words/sec=3348.29, time=0-00:05:24)
+[annot] Epoch 14.0000: train_loss/word=0.735335 (words=47452, words/sec=3383.62, time=0-00:05:31)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 14.0000 dev Loss: 1.505 (ref_len=9792) (time=0-00:05:40)
+[annot]              dev auxiliary BLEU4: 0.14380038724459895, 0.542369/0.236536/0.142033/0.092573 (BP = 0.709566, ratio=0.74, hyp_len=4095, ref_len=5500)
+             checkpoint took 0-00:00:09
+[annot] Epoch 14.0101: train_loss/word=0.416279 (words=552, words/sec=2432.43, time=0-00:05:41)
+[annot] Epoch 14.5263: train_loss/word=0.597629 (words=25161, words/sec=3550.03, time=0-00:05:48)
+[annot] Epoch 15.0000: train_loss/word=0.599347 (words=47452, words/sec=3133.29, time=0-00:05:55)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 15.0000 dev Loss: 1.549 (ref_len=9792) (time=0-00:06:06)
+[annot]              dev auxiliary BLEU4: 0.16434509219823942, 0.520522/0.228378/0.135121/0.091719 (BP = 0.838856, ratio=0.85, hyp_len=4678, ref_len=5500)
+             checkpoint took 0-00:00:11
+  new learning rate: 0.0012499999720603228
+  restarting trainer and reverting learned weights to best checkpoint..
+[annot] Epoch 15.0116: train_loss/word=0.700450 (words=472, words/sec=3685.54, time=0-00:06:06)
+[annot] Epoch 15.5202: train_loss/word=0.845781 (words=23982, words/sec=3448.09, time=0-00:06:13)
+[annot] Epoch 16.0000: train_loss/word=0.848951 (words=47452, words/sec=3366.30, time=0-00:06:20)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 16.0000 dev Loss: 1.440 (ref_len=9792) (time=0-00:06:30)
+[annot]              dev auxiliary BLEU4: 0.1487079439597787, 0.532045/0.229969/0.137050/0.095269 (BP = 0.743827, ratio=0.77, hyp_len=4244, ref_len=5500)
+             checkpoint took 0-00:00:10
+  best dev score, writing out model
+[annot] Epoch 16.0081: train_loss/word=0.609979 (words=557, words/sec=2314.70, time=0-00:06:31)
+[annot] Epoch 16.5263: train_loss/word=0.659453 (words=25015, words/sec=3351.58, time=0-00:06:38)
+[annot] Epoch 17.0000: train_loss/word=0.672345 (words=47452, words/sec=3475.24, time=0-00:06:45)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 17.0000 dev Loss: 1.460 (ref_len=9792) (time=0-00:06:56)
+[annot]              dev auxiliary BLEU4: 0.16459841092838579, 0.502354/0.224719/0.136105/0.097062 (BP = 0.837590, ratio=0.85, hyp_len=4672, ref_len=5500)
+             checkpoint took 0-00:00:10
+[annot] Epoch 17.0172: train_loss/word=0.435682 (words=714, words/sec=3557.40, time=0-00:06:56)
+[annot] Epoch 17.5288: train_loss/word=0.563034 (words=24744, words/sec=3437.35, time=0-00:07:03)
+[annot] Epoch 18.0000: train_loss/word=0.574991 (words=47452, words/sec=3348.38, time=0-00:07:10)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 18.0000 dev Loss: 1.504 (ref_len=9792) (time=0-00:07:20)
+[annot]              dev auxiliary BLEU4: 0.15631083231136164, 0.552340/0.246930/0.152122/0.106246 (BP = 0.721387, ratio=0.75, hyp_len=4146, ref_len=5500)
+             checkpoint took 0-00:00:09
+[annot] Epoch 18.0202: train_loss/word=0.409847 (words=904, words/sec=3995.53, time=0-00:07:20)
+[annot] Epoch 18.5394: train_loss/word=0.500179 (words=25750, words/sec=3430.51, time=0-00:07:27)
+[annot] Epoch 19.0000: train_loss/word=0.505234 (words=47452, words/sec=3254.59, time=0-00:07:34)
+> Checkpoint [annot]
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-dev.tmspm4000.intent
+[annot] Epoch 19.0000 dev Loss: 1.538 (ref_len=9792) (time=0-00:07:44)
+[annot]              dev auxiliary BLEU4: 0.1493083638160528, 0.518048/0.222722/0.132316/0.087988 (BP = 0.779907, ratio=0.80, hyp_len=4405, ref_len=5500)
+             checkpoint took 0-00:00:10
+  Early stopping
+reverting learned weights to best checkpoint..
+> Performing final evaluation
+Performing inference on /users/ealhossa/UNCC-CoNaLa/conala-corpus/conala-test.tmspm4000.intent
+/apps/pkg/anaconda3-5.0.1/rhel7_u2-x86_64/cuda/lib/python3.6/site-packages/h5py/__init__.py:34: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+bleu:18.32
+exact:0.60
+Thursday 14 2019 05:26:34 AM
+Date: Thursday 14 2019 05:26:34 AM
+Done!

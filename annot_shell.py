@@ -8,7 +8,9 @@ import sys
 #Add your options here and update the loop in ultraLauncher.bash
 ant_options = [
   
-    AnnotRunner(model_type='unigram',epochs= 30, layer_dim= 128, alpha= 0.01,min_freq=12)
+    AnnotRunner(model_type='unigram',epochs= 60, layer_dim= 128, alpha= 0.001,min_freq= 8),
+ AnnotRunner(model_type='unigram',epochs= 60, layer_dim= 128, alpha= 0.0001,min_freq= 8),
+AnnotRunner(model_type='unigram',epochs= 30, layer_dim= 128, alpha= 0.01,min_freq= 10),
 
     
 ]
