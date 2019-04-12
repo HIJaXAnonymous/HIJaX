@@ -5,6 +5,8 @@ import re
 import ast
 import astor
 import string
+import traceback
+import sys
 #from nltk.stem import PorterStemmer
 
 #You may need to import your stemmer here too
@@ -38,8 +40,11 @@ def replace_strings_in_ast(py_ast, string2slot):
                     if str_key in string2slot:
                         val = string2slot[str_key]
                         if isinstance(val, str):
-                            try: val = val.encode('ascii')
-                            except: pass
+                            try:
+                                val = val.encode('ascii')
+                            except:
+                                traceback.print_exc()
+                                pass
                         setattr(node, k, val)
 
 class Canonical:
@@ -71,8 +76,8 @@ class Canonical:
         # Here we can also add ways to find variables in intents
 
         slot_map = dict()
-        if (not self.std_var):
-            return intent
+        #if (not self.std_var):
+         #   return intent
         var_num = 0
         for i in range(len(str_matches)):
             if not str_matches[i][1] in slot_map:
@@ -83,19 +88,33 @@ class Canonical:
         return intent, slot_map
 
     def canonicalize_code(self, code, slot_map):
-        # add ways to find variable names in snippet before canonicalization
+        # add ways to find variable names in snippet and add to slotmap before canonicalization
 
         # one letter variable names
         # after/before = sign
         #find some pos tagger like tokenizer
 
-        string2slot = {x[0]: x[1] for x in list(slot_map.items())}
-        py_ast = ast.parse(code)
-        replace_strings_in_ast(py_ast, string2slot)
-        canonical_code = astor.to_source(py_ast)
-        return canonical_code
+        try:
+            string2slot = {x[0]: x[1] for x in list(slot_map.items())}
+            py_ast = ast.parse(code)
+            replace_strings_in_ast(py_ast, string2slot)
+            canonical_code = astor.to_source(py_ast)
+            if len(slot_map)!= 0 and canonical_code.strip() == code.strip() :
+                for slot_name, slot_info in slot_map.items():
+                    canonical_code = canonical_code.replace(slot_name, slot_info)
 
-      def decanonicalize_code(self, code, slot_map):
+            return canonical_code
+        except:
+            canonical_code = code
+            print(code, file=sys.stderr)
+            print(slot_map, file=sys.stderr)
+            traceback.print_exc()
+            for slot_name, slot_info in slot_map.items():
+                 canonical_code = canonical_code.replace(slot_name,slot_info)
+
+            return canonical_code
+
+    def decanonicalize_code(self, code, slot_map):
         try:
             slot2string = {x[1]: x[0] for x in list(slot_map.items())}
             py_ast = ast.parse(code)
