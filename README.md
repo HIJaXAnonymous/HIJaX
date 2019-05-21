@@ -1,4 +1,4 @@
-# Team UNCC - CoNaLa Challenge
+# EnPy - English to Python Translation Model
 
 ![CoNaLa Logo](https://conala-corpus.github.io/conala-logo.png "CoNaLa Logo")
 
