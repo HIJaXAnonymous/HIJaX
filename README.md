@@ -12,7 +12,7 @@ This repository contains our submission for the [CoNaLa Challenge competition](h
   * [Architecture Diagram](#architecture-diagram)
   * [Setup Prerequisites](#setup-prerequisites)
       * [Setup A Cluster Account](#cluster-account)
-  * [UNCC Model Setup On Linux](#uncc-model-setup-on-linux)
+  * [Model Setup On Linux](#model-setup-on-linux)
   * [Running Jobs](#running-jobs)
   * [More Infomation](#more-information)
   
@@ -34,7 +34,7 @@ To use the cluster in UNC Charlotte you need to have *Duo* set up on your mobile
 
 **Note:** Since training the model takes a long time we highly recommend using a computer cluster.
 
-## UNCC Model Setup on Linux
+## Model Setup on Linux
 This section is written based on our setup experience on UNCC's *Copperhead* cluster which runs *Red Hat's Linux 7.5*.
 
 ### Step 1: Python Setup
