@@ -64,7 +64,7 @@ This section is written based on our setup experience on UNCC's *Copperhead* clu
    * ``pip install --user sentencepiece>=0.0.6``
    * ``pip install --user tensorflow``
    
- ### Step 3: UNCC's Model Setup
+ ### Step 3: EnPy Model Setup
 * Run the following command in terminal/command prompt ``git clone https://github.com/taisazero/UNCC-CoNaLa.git``
 *  Move `xmnt/xmnt` to `UNCC-CoNaLa` using the command `mv`.
 * Run the following command: ``echo "alias watchme='watch -n 10 qstat -u $USER'" >> ~/.bashrc; source ~/.bashrc``
