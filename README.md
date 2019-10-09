@@ -38,7 +38,7 @@ To use the cluster in UNC Charlotte you need to have *Duo* set up on your mobile
 This section is written based on our setup experience on UNCC's *Copperhead* cluster which runs *Red Hat's Linux 7.5*.
 
 ### Step 1: Python Setup
- * If you are using the cluster run the following command to enable **Python 3.7 with CUDA**: `module load cuda/8.0 cudnn/6.0-cuda8 anaconda3/5.0.1-cuda8` - Thanks to the UNCC Cluster Support Team for the help :').
+ * If you are using the cluster run the following command to enable **Python 3.7 with CUDA**: `module load cuda/9.2  anaconda3/5.0.1-cuda92` - Thanks to the UNCC Cluster Support Team for the help :').
  
 * If you are not using the cluster, install **Python 3.7** from [*Anaconda*](https://www.anaconda.com/download/).
 
