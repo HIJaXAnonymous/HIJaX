@@ -57,13 +57,19 @@ class AnnotRunner():
                                                                    f'{EXP_DIR}/conala-corpus/conala-dev.intent',
                                                                    f'{EXP_DIR}/conala-corpus/conala-dev.snippet',
                                                                    f'{EXP_DIR}/conala-corpus/conala-test.intent',
-                                                                   f'{EXP_DIR}/conala-corpus/conala-test.snippet'],
+                                                                   f'{EXP_DIR}/conala-corpus/conala-test.snippet',
+                                                                   f'{EXP_DIR}/conala-corpus/all.code',
+                                                                   f'{EXP_DIR}/conala-corpus/all.anno'
+                                                                  ],
                                                          out_files= [f'{EXP_DIR}/conala-corpus/conala-trainnodev.tmspm4000.snippet',
                                                                      f'{EXP_DIR}/conala-corpus/conala-trainnodev.tmspm4000.intent',
                                                                      f'{EXP_DIR}/conala-corpus/conala-dev.tmspm4000.intent',
                                                                      f'{EXP_DIR}/conala-corpus/conala-dev.tmspm4000.snippet',
                                                                      f'{EXP_DIR}/conala-corpus/conala-test.tmspm4000.intent',
-                                                                     f'{EXP_DIR}/conala-corpus/conala-test.tmspm4000.snippet'],
+                                                                     f'{EXP_DIR}/conala-corpus/conala-test.tmspm4000.snippet',
+                                                                     f'{EXP_DIR}/conala-corpus/django.tmspm4000.snippet',
+                                                                     f'{EXP_DIR}/conala-corpus/django.tmspm4000.intent'
+                                                                    ],
                                                          specs= [{'filenum':'all',
                                                                  'tokenizers':[SentencepieceTokenizer(hard_vocab_limit=False,
                                                                      train_files= [f'{EXP_DIR}/conala-corpus/conala-trainnodev.intent',
@@ -128,8 +134,8 @@ class AnnotRunner():
                                       model = model)])
 
         evaluate = [AccuracyEvalTask(eval_metrics="bleu",
-                                     src_file=f"{EXP_DIR}/conala-corpus/conala-test.tmspm4000.intent",
-                                     ref_file=f"{EXP_DIR}/conala-corpus/conala-test.snippet",
+                                     src_file=f"{EXP_DIR}/conala-corpus/django.tmspm4000.intent",
+                                     ref_file=f"{EXP_DIR}/conala-corpus/all.code",
                                      hyp_file=f"results/{EXP}.test.hyp",
                                      inference=inference,
                                      model=model)]
