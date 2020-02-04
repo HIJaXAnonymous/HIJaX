@@ -44,7 +44,7 @@ This section is written based on our setup experience on UNCC's *Copperhead* clu
 
  **Note:** You need to run ``module load...`` on the cluster every time you login because the default python version is 2.7.
  
- **Optional:** To make *Python 3.7 w/ CUDA* the default Python run the following command ``echo 'module load cuda/8.0 cudnn/6.0-cuda8 anaconda3/5.0.1-cuda8' >> ~/.bashrc``
+ **Optional:** To make *Python 3.7 w/ CUDA* the default Python run the following command ``echo 'module load cuda/9.2  anaconda3/5.0.1-cuda92' >> ~/.bashrc``
  ### Step 2: Dependencies Setup
  * Install *Dynet* using the command ``pip install --user dynet``  
    * You can also run the following to install dynet with GPU ``BACKEND=cuda pip install --user  git+https://github.com/clab/dynet#egg=dynet``
@@ -54,6 +54,7 @@ This section is written based on our setup experience on UNCC's *Copperhead* clu
    * ``pip install --user 0.1.0.tar.gz``
    * ``rm 0.1.0.tar.gz``
    * **Note** - To make sure xnmt and dynet are installed properly run ``python`` then type ``import xnmt``
+ * Run ``git clone https://github.com/neulab/xnmt.git``   
  * Navigate to the xnmt directory using ``cd xnmt`` and run the following command ``pip install -r requirements.txt``
  *  Install additional dependencies for xnmt using pip:
    * ``pip install --user librosa``
@@ -65,8 +66,9 @@ This section is written based on our setup experience on UNCC's *Copperhead* clu
    * ``pip install --user tensorflow``
    
  ### Step 3: EnPy Model Setup
-* Run the following command in terminal/command prompt ``git clone https://github.com/taisazero/UNCC-CoNaLa.git``
-*  Move `xmnt/xmnt` to `UNCC-CoNaLa` using the command `mv`.
+* cd to a directory of your choosing, outside of xnmt.
+* Run the following command in terminal/command prompt ``git clone https://github.com/taisazero/EnPy.git``
+*  Move `xmnt/xmnt` to `EnPy` using the command `mv`.
 * Run the following command: ``echo "alias watchme='watch -n 10 qstat -u $USER'" >> ~/.bashrc; source ~/.bashrc``
   * This enables you to run type the command ``watchme`` to view the status CoNaLa's jobs on the cluster.
 * cd to `conala-baseline`
