@@ -110,11 +110,13 @@ if __name__ == '__main__':
                 try:
                       encoded_reconstr_code = get_encoded_code_tokens(snippet.strip())
                 except:
+                      failed = True
                       traceback.print_exc()
             elif not failed:
                 try:
                      encoded_reconstr_code = get_encoded_code_tokens(canonical_snippet.strip())
                 except:
+                      failed = True
                       traceback.print_exc() 
             else:
                 num_failed += 1
