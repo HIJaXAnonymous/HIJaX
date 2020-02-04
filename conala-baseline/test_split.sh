@@ -33,7 +33,7 @@ for f in intent snippet; do
   tail -n +401 < conala-train.$f > conala-trainnodev.$f
   cat conala-trainnodev.$f <(head -n 100000 conala-mined.$f) > conala-trainnodev+mined.$f
   cat conala-trainnodev.$f < conala-unique_mined.$f > conala-trainnodev+unique-mined.$f
-  cat conala-trainnodev.$f < conala-all_prob50_mined.$f > conala-trainnodev+all_prob50_mined.$f
+ cat conala-trainnodev.$f < conala-all_prob50_mined.$f > conala-trainnodev+all_prob50_mined.$f
 done
 
 #for f in intent snippet; do
