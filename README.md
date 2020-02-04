@@ -54,7 +54,6 @@ This section is written based on our setup experience on UNCC's *Copperhead* clu
    * ``pip install --user 0.1.0.tar.gz``
    * ``rm 0.1.0.tar.gz``
    * **Note** - To make sure xnmt and dynet are installed properly run ``python`` then type ``import xnmt``
- * Run ``git clone https://github.com/neulab/xnmt.git``   
  * Navigate to the xnmt directory using ``cd xnmt`` and run the following command ``pip install -r requirements.txt``
  *  Install additional dependencies for xnmt using pip:
    * ``pip install --user librosa``
@@ -68,7 +67,6 @@ This section is written based on our setup experience on UNCC's *Copperhead* clu
  ### Step 3: EnPy Model Setup
 * cd to a directory of your choosing, outside of xnmt.
 * Run the following command in terminal/command prompt ``git clone https://github.com/taisazero/EnPy.git``
-*  Move `xmnt/xmnt` to `EnPy` using the command `mv`.
 * Run the following command: ``echo "alias watchme='watch -n 10 qstat -u $USER'" >> ~/.bashrc; source ~/.bashrc``
   * This enables you to run type the command ``watchme`` to view the status CoNaLa's jobs on the cluster.
 * cd to `conala-baseline`
