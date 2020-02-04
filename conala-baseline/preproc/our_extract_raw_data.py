@@ -107,10 +107,10 @@ if __name__ == '__main__':
                     example['slot_map'] = slot_map
 
             if rewritten_intent is None and not failed:
-		try:
-                	encoded_reconstr_code = get_encoded_code_tokens(snippet.strip())
-		except:
-			traceback.print_exc()
+                try:
+                      encoded_reconstr_code = get_encoded_code_tokens(snippet.strip())
+                except:
+                      traceback.print_exc()
             elif not failed:
                 encoded_reconstr_code = get_encoded_code_tokens(canonical_snippet.strip())
             else:
