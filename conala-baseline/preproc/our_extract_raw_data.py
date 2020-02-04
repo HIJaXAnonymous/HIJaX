@@ -112,7 +112,10 @@ if __name__ == '__main__':
                 except:
                       traceback.print_exc()
             elif not failed:
-                encoded_reconstr_code = get_encoded_code_tokens(canonical_snippet.strip())
+                try:
+                     encoded_reconstr_code = get_encoded_code_tokens(canonical_snippet.strip())
+                except:
+                      traceback.print_exc() 
             else:
                 num_failed += 1
                 #del dataset[i]
