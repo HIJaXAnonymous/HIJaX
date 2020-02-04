@@ -44,7 +44,7 @@ This section is written based on our setup experience on UNCC's *Copperhead* clu
 
  **Note:** You need to run ``module load...`` on the cluster every time you login because the default python version is 2.7.
  
- **Optional:** To make *Python 3.7 w/ CUDA* the default Python run the following command ``echo 'module load cuda/8.0 cudnn/6.0-cuda8 anaconda3/5.0.1-cuda8' >> ~/.bashrc``
+ **Optional:** To make *Python 3.7 w/ CUDA* the default Python run the following command ``echo 'module load cuda/9.2  anaconda3/5.0.1-cuda92' >> ~/.bashrc``
  ### Step 2: Dependencies Setup
  * Install *Dynet* using the command ``pip install --user dynet``  
    * You can also run the following to install dynet with GPU ``BACKEND=cuda pip install --user  git+https://github.com/clab/dynet#egg=dynet``
