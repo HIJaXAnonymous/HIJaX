@@ -67,7 +67,7 @@ This section is written based on our setup experience on UNCC's *Copperhead* clu
    
  ### Step 3: EnPy Model Setup
 * Run the following command in terminal/command prompt ``git clone https://github.com/taisazero/EnPy.git``
-*  Move `xmnt/xmnt` to `UNCC-CoNaLa` using the command `mv`.
+*  Move `xmnt/xmnt` to `EnPy` using the command `mv`.
 * Run the following command: ``echo "alias watchme='watch -n 10 qstat -u $USER'" >> ~/.bashrc; source ~/.bashrc``
   * This enables you to run type the command ``watchme`` to view the status CoNaLa's jobs on the cluster.
 * cd to `conala-baseline`
