@@ -2,10 +2,7 @@
 
 ![CoNaLa Logo](https://conala-corpus.github.io/conala-logo.png "CoNaLa Logo")
 
-This repository contains our submission for the [CoNaLa Challenge competition](https://competitions.codalab.org/competitions/19175). Our team members are: 
-* 💖 Erfan Al-Hossami
-* 💖 Mariah Olson
-* 💖 Brandon Beckwidth
+This repository contains our submission for the [CoNaLa Challenge competition](https://competitions.codalab.org/competitions/19175).
 
 ## Table of contents
 
@@ -63,6 +60,9 @@ This section is written based on our setup experience on UNCC's *Copperhead* clu
    * ``pip install --user graphviz``
    * ``pip install --user sentencepiece>=0.0.6``
    * ``pip install --user tensorflow``
+   * ``pip install --user tensorboardX unidecode pylru``
+   * ``python -m ntlk.downloader``
+   
    
  ### Step 3: EnPy Model Setup
 * cd to a directory of your choosing, outside of xnmt.
