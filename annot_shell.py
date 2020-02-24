@@ -16,7 +16,7 @@ AnnotRunner(model_type='unigram',epochs= 30, layer_dim= 128, alpha= 0.01,min_fre
 ]
 
 ant = ant_options[0]
-
+print(sys.argv[1])
 ant_select = int(sys.argv[1])
 if ant_select < len(ant_options):
     print("Setting ant")

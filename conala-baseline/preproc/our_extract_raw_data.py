@@ -45,6 +45,7 @@ if __name__ == '__main__':
         print("Failed to set cannon...., using default")
     num_failed = 0
     total_snippets = 0
+   # for file_path, file_type in [('conala-train.json', 'annotated'), ('conala-test.json', 'annotated'), ('conala-mined.jsonl', 'mined'),('conala-unique_mined.json','edited'),('conala-all_prob50_mined.json','edited'),('attack_code_test.txt','attack'),('attack_code_train.txt','attack'),('attack_text_train.txt','attack'),('attack_text_test.txt','attack')]:
     for file_path, file_type in [('conala-train.json', 'annotated'), ('conala-test.json', 'annotated'), ('conala-mined.jsonl', 'mined'),('conala-unique_mined.json','edited'),('conala-all_prob50_mined.json','edited')]:
         print('extracting {} file {}'.format(file_type, file_path), file=sys.stderr)
 
@@ -57,6 +58,10 @@ if __name__ == '__main__':
                     dataset.append(json.loads(line.strip()))
         elif file_type == 'edited':
             dataset = json.load(open(file_path))
+       #rth, file_type in [('conala-train.json', 'annotated'), ('conala-test.json', 'annotated'), ('conala-mined.jsonl', 'mined'),('conala-unique_mined.json','edited'),('conala-all_prob50_mined.json','edited')]: TODO: Cclize attack files as well
+       # elif file_type = 'attack':
+           # dataset = []
+             
         for i, example in enumerate(dataset):
             intent = example['intent']
             rewritten_intent = None
@@ -64,6 +69,7 @@ if __name__ == '__main__':
               rewritten_intent = example ['rewritten_intent']
             else:
               final_intent = canon.clean_intent(intent)
+
             
              
             snippet = example['snippet']

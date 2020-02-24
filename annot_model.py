@@ -52,37 +52,46 @@ class AnnotRunner():
         ParamManager.init_param_col()
         ParamManager.param_col.model_file = model_file
 
-        pre_runner=PreprocRunner(tasks= [PreprocTokenize(in_files=[f'{EXP_DIR}/conala-corpus/conala-trainnodev.snippet',
-                                                                   f'{EXP_DIR}/conala-corpus/conala-trainnodev.intent',
-                                                                   f'{EXP_DIR}/conala-corpus/conala-dev.intent',
-                                                                   f'{EXP_DIR}/conala-corpus/conala-dev.snippet',
-                                                                   f'{EXP_DIR}/conala-corpus/conala-test.intent',
-                                                                   f'{EXP_DIR}/conala-corpus/conala-test.snippet',
-                                                                   f'{EXP_DIR}/conala-corpus/all.code',
-                                                                   f'{EXP_DIR}/conala-corpus/all.anno'
+        pre_runner=PreprocRunner(tasks= [PreprocTokenize(in_files=[#f'{EXP_DIR}/conala-corpus/conala-trainnodev.snippet',
+                                                                   #f'{EXP_DIR}/conala-corpus/conala-trainnodev.intent',
+                                                                   #f'{EXP_DIR}/conala-corpus/conala-dev.intent',
+                                                                   #f'{EXP_DIR}/conala-corpus/conala-dev.snippet',
+                                                                   #f'{EXP_DIR}/conala-corpus/conala-test.intent',
+                                                                   #f'{EXP_DIR}/conala-corpus/conala-test.snippet',
+								   f'{EXP_DIR}/conala-corpus/attack_code_train.txt',
+								   f'{EXP_DIR}/conala-corpus/attack_text_train.txt',
+                                                                   f'{EXP_DIR}/conala-corpus/attack_code_test.txt',
+                                                                   f'{EXP_DIR}/conala-corpus/attack_text_test.txt'
+                                                                       
+                                                                   #f'{EXP_DIR}/conala-corpus/all.code',
+                                                                   #f'{EXP_DIR}/conala-corpus/all.anno'
                                                                   ],
-                                                         out_files= [f'{EXP_DIR}/conala-corpus/conala-trainnodev.tmspm4000.snippet',
-                                                                     f'{EXP_DIR}/conala-corpus/conala-trainnodev.tmspm4000.intent',
-                                                                     f'{EXP_DIR}/conala-corpus/conala-dev.tmspm4000.intent',
-                                                                     f'{EXP_DIR}/conala-corpus/conala-dev.tmspm4000.snippet',
-                                                                     f'{EXP_DIR}/conala-corpus/conala-test.tmspm4000.intent',
-                                                                     f'{EXP_DIR}/conala-corpus/conala-test.tmspm4000.snippet',
-                                                                     f'{EXP_DIR}/conala-corpus/django.tmspm4000.snippet',
-                                                                     f'{EXP_DIR}/conala-corpus/django.tmspm4000.intent'
+                                                         out_files= [#f'{EXP_DIR}/conala-corpus/conala-trainnodev.tmspm4000.snippet',
+                                                                     #f'{EXP_DIR}/conala-corpus/conala-trainnodev.tmspm4000.intent',
+                                                                     #f'{EXP_DIR}/conala-corpus/conala-dev.tmspm4000.intent',
+                                                                     #f'{EXP_DIR}/conala-corpus/conala-dev.tmspm4000.snippet',
+                                                                     #f'{EXP_DIR}/conala-corpus/conala-test.tmspm4000.intent',
+                                                                     #f'{EXP_DIR}/conala-corpus/conala-test.tmspm4000.snippet',
+                                                                     f'{EXP_DIR}/conala-corpus/attack-train.tmspm4000.snippet',
+                                                                     f'{EXP_DIR}/conala-corpus/attack-train.tmspm4000.intent',
+                                                                     f'{EXP_DIR}/conala-corpus/attack-test.tmspm4000.snippet',
+                                                                     f'{EXP_DIR}/conala-corpus/attack-test.tmspm4000.intent'
+                                                                     #f'{EXP_DIR}/conala-corpus/django.tmspm4000.snippet',
+                                                                     #f'{EXP_DIR}/conala-corpus/django.tmspm4000.intent'
                                                                     ],
                                                          specs= [{'filenum':'all',
                                                                  'tokenizers':[SentencepieceTokenizer(hard_vocab_limit=False,
-                                                                     train_files= [f'{EXP_DIR}/conala-corpus/conala-trainnodev.intent',
-                                                                                   f'{EXP_DIR}/conala-corpus/conala-trainnodev.snippet'],vocab_size=self.vocab_size,
-                                                                 model_type= self.model_type,model_prefix= 'conala-corpus/conala-trainnodev.tmspm4000.spm')]}])
-            ,PreprocVocab(in_files= [f'{EXP_DIR}/conala-corpus/conala-trainnodev.tmspm4000.intent',
-                                     f'{EXP_DIR}/conala-corpus/conala-trainnodev.tmspm4000.snippet'],
-                          out_files=[f'{EXP_DIR}/conala-corpus/conala-trainnodev.tmspm4000.intent.vocab',
-                                     f'{EXP_DIR}/conala-corpus/conala-trainnodev.tmspm4000.snippet.vocab'],
+                                                                     train_files= [f'{EXP_DIR}/conala-corpus/attack_text_train.txt',
+                                                                                   f'{EXP_DIR}/conala-corpus/attack_code_train.txt'],vocab_size=self.vocab_size,
+                                                                 model_type= self.model_type,model_prefix= 'conala-corpus/attack-train.tmspm4000.spm')]}])
+            ,PreprocVocab(in_files= [f'{EXP_DIR}/conala-corpus/attack-train.tmspm4000.intent',
+                                     f'{EXP_DIR}/conala-corpus/attack-train.tmspm4000.snippet'],
+                          out_files=[f'{EXP_DIR}/conala-corpus/attack-train.tmspm4000.intent.vocab',
+                                     f'{EXP_DIR}/conala-corpus/attack-train.tmspm4000.snippet.vocab'],
                           specs=[{'filenum':'all','filters':[VocabFiltererFreq(min_freq = self.min_freq)]}])],overwrite=False)
 
-        src_vocab = Vocab(vocab_file=f"{EXP_DIR}/conala-corpus/conala-trainnodev.tmspm4000.intent.vocab")
-        trg_vocab = Vocab(vocab_file=f"{EXP_DIR}/conala-corpus/conala-trainnodev.tmspm4000.snippet.vocab")
+        src_vocab = Vocab(vocab_file=f"{EXP_DIR}/conala-corpus/attack-train.tmspm4000.intent.vocab")
+        trg_vocab = Vocab(vocab_file=f"{EXP_DIR}/conala-corpus/attack-train.tmspm4000.snippet.vocab")
 
         batcher = Batcher(batch_size=64)
 
@@ -121,21 +130,24 @@ class AnnotRunner():
           lr_decay= 0.5,
           restart_trainer= True,
           run_for_epochs=self.epochs,
-          src_file= f"{EXP_DIR}/conala-corpus/conala-trainnodev.tmspm4000.intent",
-          trg_file= f"{EXP_DIR}/conala-corpus/conala-trainnodev.tmspm4000.snippet",
-          dev_tasks=[LossEvalTask(src_file=f"{EXP_DIR}/conala-corpus/conala-dev.tmspm4000.intent",
-                                  ref_file= f'{EXP_DIR}/conala-corpus/conala-dev.tmspm4000.snippet',
+          src_file= f"{EXP_DIR}/conala-corpus/attack-train.tmspm4000.intent",
+          trg_file= f"{EXP_DIR}/conala-corpus/attack-train.tmspm4000.snippet",
+          dev_tasks=[LossEvalTask(src_file=f"{EXP_DIR}/conala-corpus/attack-test.tmspm4000.intent",
+                                  ref_file= f'{EXP_DIR}/conala-corpus/attack-test.tmspm4000.snippet',
                                   model=model,
                                   batcher=WordSrcBatcher(avg_batch_size=64)),
                      AccuracyEvalTask(eval_metrics= 'bleu',
-                                      src_file= f'{EXP_DIR}/conala-corpus/conala-dev.tmspm4000.intent',
-                                      ref_file= f'{EXP_DIR}/conala-corpus/conala-dev.snippet',
+                                      src_file= f'{EXP_DIR}/conala-corpus/attack-test.tmspm4000.intent',
+                                      ref_file= f'{EXP_DIR}/conala-corpus/attack_text_test.txt',
                                       hyp_file= f'results/{EXP}.dev.hyp',
                                       model = model)])
 
         evaluate = [AccuracyEvalTask(eval_metrics="bleu",
-                                     src_file=f"{EXP_DIR}/conala-corpus/django.tmspm4000.intent",
-                                     ref_file=f"{EXP_DIR}/conala-corpus/all.code",
+                                     #src_file=f"{EXP_DIR}/conala-corpus/conala-test.tmspm4000.intent",
+                                     src_file = f"{EXP_DIR}/conala-corpus/attack-test.tmspm4000.intent",
+                                     #ref_file=f"{EXP_DIR}/conala-corpus/all.code",
+				     #ref_file = f"{EXP_DIR}/conala-corpus/conala-test.snippet",
+                                     ref_file = f"{EXP_DIR}/conala-corpus/attack_text_test.txt",
                                      hyp_file=f"results/{EXP}.test.hyp",
                                      inference=inference,
                                      model=model)]
