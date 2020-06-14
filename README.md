@@ -25,17 +25,10 @@ Before setting up our project we'd like to make sure you have some prerequisite 
 ### Cluster Account
 
 
-This step is optional. UNC Charlotte provides a cluster for educational purposes, [*Mamba*](https://urc.uncc.edu/educational-clusters/mamba-user-notes), and a research cluster, [*Copperhead*](https://urc.uncc.edu/faqs/copperhead-user-notes). Request an account in the appropriate cluster using the links mentioned earlier.
-
-To use the cluster in UNC Charlotte you need to have *Duo* set up on your mobile device & UNC Charlotte account. Follow this [guide](https://spaces.uncc.edu/pages/viewpage.action?pageId=35651686) to setup Duo.
-
 **Note:** Since training the model takes a long time we highly recommend using a computer cluster.
 
-## Model Setup on Linux
-This section is written based on our setup experience on UNCC's *Copperhead* cluster which runs *Red Hat's Linux 7.5*.
-
 ### Step 1: Python Setup
- * If you are using the cluster run the following command to enable **Python 3.7 with CUDA**: `module load cuda/9.2  anaconda3/5.0.1-cuda92` - Thanks to the UNCC Cluster Support Team for the help :').
+ * If you are using the cluster run the following command to enable **Python 3.7 with CUDA**: `module load cuda/9.2  anaconda3/5.0.1-cuda92`
  
 * If you are not using the cluster, install **Python 3.7** from [*Anaconda*](https://www.anaconda.com/download/).
 
@@ -72,7 +65,7 @@ This section is written based on our setup experience on UNCC's *Copperhead* clu
 * cd to `conala-baseline`
 * Run ``pip install --user -r requirements.txt``
 * Run ``cd ..``
-* To extract and pre-process the dataset run the following in UNCC-CoNaLa's home directory: ``bash conala-baseline/test_split.sh``
+* To extract and pre-process the dataset run the following in the home directory: ``bash conala-baseline/test_split.sh``
   * **Note** - it will take a few minutes to complete.
 * Create a folder in your home directory using the following command `mkdir ~/results_archive/`
 ### Step 4: Test Run
@@ -85,8 +78,3 @@ Run ``bash ultraLaunch.bash`` for a test run. It will take around 30 minutes. Th
 ## More Information
 For more information on what each file and folder contains, please visit this **TO BE ADDED**.
 
-## Thanks & Recognitions    <img src="https://thumbs.gfycat.com/TepidRequiredHeifer-size_restricted.gif" width="65">
- 
-* Our team would like to thank our advisor [Dr. Samira Shaikh](https://webpages.uncc.edu/sshaikh2/index.html) for her continous support for this project.
-
-* We'd also like to recognize the authors of [xnmt](https://github.com/neulab/xnmt) & the organizers of the [CoNaLa challenge](https://conala-corpus.github.io/) for making our project possible.
