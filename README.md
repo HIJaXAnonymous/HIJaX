@@ -12,10 +12,6 @@ This repository contains our submission for the [CoNaLa Challenge competition](h
   * [Model Setup On Linux](#model-setup-on-linux)
   * [Running Jobs](#running-jobs)
   * [More Infomation](#more-information)
-  
-## Architecture Diagram
-
-![CoNaLa Architecture Diagram](https://github.com/taisazero/EnPy/blob/master/CoNaLa%20Architecture%20Diagram.jpg?raw=true)
 
 
 ## Setup Prerequisites
