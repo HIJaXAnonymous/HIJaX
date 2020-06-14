@@ -55,7 +55,7 @@ Before setting up our project we'd like to make sure you have some prerequisite 
    
  ### Step 3: EnPy Model Setup
 * cd to a directory of your choosing, outside of xnmt.
-* Run the following command in terminal/command prompt ``git clone https://github.com/taisazero/EnPy.git``
+* Run the following command in terminal/command prompt ``git clone https://github.com/HIJaXAnonymous/HIJaX``
 * Run the following command: ``echo "alias watchme='watch -n 10 qstat -u $USER'" >> ~/.bashrc; source ~/.bashrc``
   * This enables you to run type the command ``watchme`` to view the status CoNaLa's jobs on the cluster.
 * cd to `conala-baseline`
